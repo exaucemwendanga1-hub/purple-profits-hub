@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo_transparent.png";
 
 const discordIcon = (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
