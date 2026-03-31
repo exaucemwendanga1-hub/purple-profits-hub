@@ -4,21 +4,14 @@ import { toast } from "sonner";
 
 const products = [
   { name: "All Supplier Bundle", price: "$24.99", old: "$74.99", emoji: "📦", priceId: "price_1TG8uJPkl9P0JJ5qx0TQ3ccH" },
-  { name: "Receipt Creator + View Tools", price: "$19.99", old: "$39.99", emoji: "🧾", priceId: "price_1TG95mPkl9P0JJ5qhxMJUSc2" },
   { name: "Shoe Supplier", price: "$9.99", old: "$19.99", emoji: "👟", priceId: "price_1TG96qPkl9P0JJ5qXGXtNrmk" },
   { name: "Luxury Watch Supplier", price: "$9.99", old: "$19.99", emoji: "⌚", priceId: "price_1TGvFmPkl9P0JJ5qY6nfhFdm" },
   { name: "Earbud Supplier", price: "$9.99", old: "$19.99", emoji: "🎧", priceId: "price_1TGvG8Pkl9P0JJ5q5S2l1ceZ" },
   { name: "Cologne Supplier", price: "$9.99", old: "$19.99", emoji: "🧴", priceId: "price_1TGvH6Pkl9P0JJ5q4mg7eLmk" },
-  { name: "All Jewelry Supplier", price: "$19.99", old: "$49.99", emoji: "💎", priceId: "price_1TGvHYPkl9P0JJ5q58NQEEHH" },
-  { name: "Bag Supplier", price: "$9.99", old: "$19.99", emoji: "👜", priceId: "price_1TGvHvPkl9P0JJ5qDdi5qASj" },
   { name: "Luxury Glasses Supplier", price: "$9.99", old: "$19.99", emoji: "🕶️", priceId: "price_1TGvIHPkl9P0JJ5q5dIn0rk9" },
-  { name: "Athletic Wear Supplier", price: "$9.99", old: "$19.99", emoji: "🏃", priceId: "price_1TGvIZPkl9P0JJ5qltAlMnAq" },
   { name: "Puffer Jacket Supplier", price: "$9.99", old: "$19.99", emoji: "🧥", priceId: "price_1TGvIwPkl9P0JJ5qVtH9gE7c" },
-  { name: "Wallet Supplier", price: "$9.99", old: "$19.99", emoji: "👛", priceId: "price_1TGvLpPkl9P0JJ5qv3DecbUv" },
   { name: "Tech Supplier", price: "$9.99", old: "$19.99", emoji: "📱", priceId: "price_1TGvM7Pkl9P0JJ5qMYG2mdtE" },
   { name: "Belt Supplier", price: "$9.99", old: "$19.99", emoji: "🪢", priceId: "price_1TGvMTPkl9P0JJ5qQ7c79u8b" },
-  { name: "Cleat + Jersey Supplier", price: "$9.99", old: "$19.99", emoji: "⚽", priceId: "price_1TGvN4Pkl9P0JJ5q08TrocrG" },
-  { name: "Golf Club Supplier *NEW*", price: "$9.99", old: "$19.99", emoji: "⛳", priceId: "price_1TGvNjPkl9P0JJ5qZmOMZqtJ" },
 ];
 
 const ProductGrid = () => {
