@@ -11,23 +11,43 @@ const reviews = [
 
 const ReviewsGrid = () => (
   <section className="container mx-auto px-4 py-16">
-    <h2 className="font-heading text-4xl md:text-5xl text-center text-foreground mb-12">What Our Customers Say</h2>
+    <div className="text-center mb-12">
+      <h2 className="font-heading text-4xl md:text-5xl text-foreground mb-3">
+        WHAT OUR CUSTOMERS SAY
+      </h2>
+      <div className="flex items-center justify-center gap-1 mb-2">
+        {[...Array(5)].map((_, i) => (
+          <span key={i} className="text-gold text-xl">★</span>
+        ))}
+      </div>
+      <p className="text-muted-foreground text-sm">Rated 5 out of 5 stars</p>
+    </div>
+
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
       {reviews.map((r) => (
-        <div key={r.name} className="bg-card border border-border rounded-xl p-6 hover:-translate-y-1 hover:border-primary/50 transition-all">
+        <div
+          key={r.name}
+          className="bg-card border border-border rounded-2xl p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:glow-purple-sm"
+        >
           <div className="text-gold text-sm mb-3">★★★★★</div>
           <p className="text-muted-foreground text-sm mb-5 leading-relaxed">"{r.text}"</p>
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-full bg-primary/30 flex items-center justify-center text-primary-light font-bold text-sm">
+            <div className="w-9 h-9 rounded-full bg-primary/30 flex items-center justify-center text-primary-foreground font-bold text-sm">
               {r.name[0]}
             </div>
             <div>
               <div className="text-foreground text-sm font-semibold">{r.name}</div>
-              <div className="text-muted-foreground text-xs">Feb 2026</div>
+              <div className="text-muted-foreground text-xs">Verified Buyer</div>
             </div>
           </div>
         </div>
       ))}
+    </div>
+
+    <div className="text-center mt-10">
+      <button className="bg-primary text-primary-foreground px-8 py-3 rounded-xl font-semibold transition-all duration-300 hover:bg-primary-light glow-purple-sm hover:glow-purple">
+        Write A Review
+      </button>
     </div>
   </section>
 );
