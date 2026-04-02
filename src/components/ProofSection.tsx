@@ -1,7 +1,11 @@
+import proof1 from "@/assets/proof-1.jpg";
+import proof2 from "@/assets/proof-2.jpg";
+import proof3 from "@/assets/proof-3.jpg";
+
 const proofImages = [
-  { label: "Proof Image 1", src: "/placeholder.svg" },
-  { label: "Proof Image 2", src: "/placeholder.svg" },
-  { label: "Proof Image 3", src: "/placeholder.svg" },
+  { label: "Store Revenue Dashboard", src: proof1 },
+  { label: "Sales Notifications", src: proof2 },
+  { label: "Customer Reviews", src: proof3 },
 ];
 
 const ProofSection = () => (
@@ -19,6 +23,9 @@ const ProofSection = () => (
             src={img.src}
             alt={img.label}
             className="w-full h-[200px] object-cover"
+            loading="lazy"
+            width={768}
+            height={512}
           />
           <div className="p-4 text-center">
             <span className="text-muted-foreground text-sm">{img.label}</span>
