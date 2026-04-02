@@ -7,8 +7,8 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-radial-purple opacity-50 animate-pulse" />
       <div className="relative container mx-auto px-4 text-center">
         <h1 className="font-heading text-5xl sm:text-6xl md:text-8xl leading-none mb-6 text-foreground">
-          Start Making Money With<br /><span className="text-gradient-purple">Viral Products</span>
-          <div className="text-gradient-purple glow-purple-sm">top quality suppliers!</div>
+          Start Making Money With<br /><span className="text-gradient-purple"></span>
+          <div className="text-gradient-purple glow-purple-sm bg-primary-foreground border-primary-foreground shadow-none rounded-none opacity-100">top quality suppliers!</div>
         </h1>
         <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10">
           Access winning products and suppliers instantly
