@@ -19,6 +19,7 @@ const Navbar = () => {
           {[["Home","hero"],["Products","products"],["FAQ","faq"]].map(([label, id]) => (
             <button key={id} onClick={() => scrollTo(id)} className="text-muted-foreground hover:text-foreground transition-colors font-medium">{label}</button>
           ))}
+          <a href="sms:+16399949261" className="text-muted-foreground hover:text-foreground transition-colors font-medium">Contact</a>
         </div>
 
         <button className="md:hidden absolute right-4 top-6 text-foreground" onClick={() => setOpen(!open)}>
@@ -31,6 +32,7 @@ const Navbar = () => {
           {[["Home","hero"],["Products","products"],["FAQ","faq"]].map(([label, id]) => (
             <button key={id} onClick={() => scrollTo(id)} className="text-muted-foreground hover:text-foreground py-2">{label}</button>
           ))}
+          <a href="sms:+16399949261" className="text-muted-foreground hover:text-foreground py-2">Contact</a>
         </div>
       )}
     </nav>
