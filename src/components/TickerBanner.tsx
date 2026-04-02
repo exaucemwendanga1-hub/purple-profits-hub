@@ -12,7 +12,7 @@ const TickerBanner = () => {
   useEffect(() => {
     const t = setInterval(() => {
       setViewers(() => Math.floor(Math.random() * 16) + 5);
-    }, 90_000);
+    }, 30_000);
     return () => clearInterval(t);
   }, []);
 
