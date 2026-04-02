@@ -89,7 +89,8 @@ const ProductGrid = () => {
         {products.map((p) => (
           <div
             key={p.name}
-            className="relative group bg-card border border-foreground/30 rounded-2xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 hover:border-foreground/60 hover:glow-purple-sm"
+            className="relative group bg-card border border-foreground/30 rounded-2xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 hover:border-foreground/60 hover:glow-purple-sm cursor-pointer"
+            onClick={() => handleBuy(p.priceId)}
           >
             {/* Best Deal Badge */}
             {"bestDeal" in p && p.bestDeal && (
@@ -134,13 +135,13 @@ const ProductGrid = () => {
               </div>
               <div className="flex flex-col gap-2 w-full mt-auto">
                 <button
-                  onClick={() => setExpandedId(expandedId === p.priceId ? null : p.priceId)}
+                  onClick={(e) => { e.stopPropagation(); setExpandedId(expandedId === p.priceId ? null : p.priceId); }}
                   className="w-full border border-foreground/30 text-foreground text-xs md:text-sm py-2 md:py-2.5 rounded-lg hover:bg-primary/10 transition-colors font-heading tracking-wide uppercase"
                 >
                   {expandedId === p.priceId ? "Details −" : "Details +"}
                 </button>
                 <button
-                  onClick={() => handleBuy(p.priceId)}
+                  onClick={(e) => { e.stopPropagation(); handleBuy(p.priceId); }}
                   disabled={loadingId === p.priceId}
                   className="w-full bg-primary text-primary-foreground text-xs md:text-sm py-2 md:py-2.5 rounded-lg hover:bg-primary-light transition-colors font-heading tracking-wide uppercase disabled:opacity-50"
                 >
