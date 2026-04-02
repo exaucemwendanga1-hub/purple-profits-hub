@@ -48,7 +48,16 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-body antialiased;
+    @apply text-foreground font-body antialiased;
+    background: linear-gradient(165deg, 
+      hsl(260 50% 10%) 0%, 
+      hsl(250 40% 8%) 25%, 
+      hsl(240 35% 6%) 50%, 
+      hsl(255 45% 10%) 75%, 
+      hsl(270 40% 8%) 100%
+    );
+    background-attachment: fixed;
+    min-height: 100vh;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
