@@ -89,7 +89,8 @@ const ProductGrid = () => {
         {products.map((p) => (
           <div
             key={p.name}
-            className="relative group bg-card border border-foreground/30 rounded-2xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 hover:border-foreground/60 hover:glow-purple-sm"
+            className="relative group bg-card border border-foreground/30 rounded-2xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 hover:border-foreground/60 hover:glow-purple-sm cursor-pointer"
+            onClick={() => handleBuy(p.priceId)}
           >
             {/* Best Deal Badge */}
             {"bestDeal" in p && p.bestDeal && (
