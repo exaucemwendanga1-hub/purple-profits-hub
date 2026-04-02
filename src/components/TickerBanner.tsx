@@ -2,14 +2,22 @@ import { useState, useEffect } from "react";
 
 const TickerBanner = () => {
   const [seconds, setSeconds] = useState(45 * 60);
+  const [viewers, setViewers] = useState(() => Math.floor(Math.random() * 40) + 50);
 
   useEffect(() => {
     const t = setInterval(() => setSeconds(s => (s > 0 ? s - 1 : 0)), 1000);
     return () => clearInterval(t);
   }, []);
 
+  useEffect(() => {
+    const t = setInterval(() => {
+      setViewers(v => Math.max(30, Math.min(120, v + Math.floor(Math.random() * 11) - 5)));
+    }, 90_000);
+    return () => clearInterval(t);
+  }, []);
+
   const m = Math.floor(seconds / 60).toString().padStart(2, "0");
-  const s = (seconds % 60).toString().padStart(2, "0");
+  const sc = (seconds % 60).toString().padStart(2, "0");
 
   const items = [
     "🔥 500+ Happy Customers",
@@ -17,8 +25,8 @@ const TickerBanner = () => {
     "🌍 Worldwide Shipping Available",
     "✅ Trusted Suppliers",
     "Instant Access After Purchase⚡",
-    `⏳ Price increasing in ${m}:${s}`,
-    "👀 73 people viewing now",
+    `⏳ Price increasing in ${m}:${sc}`,
+    `👀 ${viewers} people viewing now`,
   ];
 
   const text = items.join("   ·   ") + "   ·   ";
