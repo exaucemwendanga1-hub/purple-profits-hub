@@ -10,8 +10,7 @@ const products = [
   { name: "Cologne Supplier", price: "$11.99", old: "$19.99", emoji: "🧴", priceId: "price_1TGvH6Pkl9P0JJ5q4mg7eLmk" },
   
   { name: "Puffer Jacket Supplier", price: "$11.99", old: "$19.99", emoji: "🧥", priceId: "price_1TGvIwPkl9P0JJ5qVtH9gE7c" },
-
-
+];
 
 const ProductGrid = () => {
   const [loadingId, setLoadingId] = useState<string | null>(null);
