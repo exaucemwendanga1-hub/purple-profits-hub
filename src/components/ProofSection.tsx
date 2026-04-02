@@ -17,7 +17,7 @@ const ProofSection = () => (
       Proof It's Not That Hard...
     </h2>
     <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-      <div className="flex gap-5 animate-[scroll_20s_linear_infinite] w-max">
+      <div className="flex gap-5 animate-scroll w-max hover:[animation-play-state:paused]">
         {proofImages.map((img, i) => (
           <div
             key={i}
