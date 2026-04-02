@@ -10,7 +10,7 @@ import productPuffer from "@/assets/product-puffer.png";
 import productJewelry from "@/assets/product-jewelry.png";
 
 const products = [
-  { name: "All Supplier Bundle", price: "$24.99", old: "$74.99", image: productJewelry, priceId: "price_1TG8uJPkl9P0JJ5qx0TQ3ccH" },
+  { name: "All Supplier Bundle", price: "$24.99", old: "$74.99", image: productJewelry, priceId: "price_1TG8uJPkl9P0JJ5qx0TQ3ccH", bestDeal: true },
   { name: "Shoe Supplier", price: "$11.99", old: "$19.99", image: productShoes, priceId: "price_1TG96qPkl9P0JJ5qXGXtNrmk" },
   { name: "Luxury Watch Supplier", price: "$11.99", old: "$19.99", image: productWatch, priceId: "price_1TGvFmPkl9P0JJ5qY6nfhFdm" },
   { name: "Earbud Supplier", price: "$11.99", old: "$19.99", image: productEarbuds, priceId: "price_1TGvG8Pkl9P0JJ5q5S2l1ceZ" },
@@ -84,10 +84,24 @@ const ProductGrid = () => {
         <p className="text-muted-foreground text-xs mt-1">You can also enter coupon codes directly on the checkout page</p>
       </div>
 
-      <div className="grid gap-5" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))" }}>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-5 max-w-4xl mx-auto">
         {products.map((p) => (
-          <div key={p.name} className="group bg-card border border-border rounded-xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 hover:border-primary/50 hover:glow-purple-sm">
-            <div className="w-full h-40 overflow-hidden">
+          <div
+            key={p.name}
+            className="relative group bg-card border border-border rounded-2xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 hover:border-primary/50 hover:glow-purple-sm"
+          >
+            {/* Best Deal Badge */}
+            {"bestDeal" in p && p.bestDeal && (
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20 bg-muted-foreground text-background text-[10px] md:text-xs font-bold px-3 py-1 rounded-b-lg tracking-wide">
+                BEST DEAL
+              </div>
+            )}
+
+            {/* Image Area */}
+            <div className="relative w-full aspect-square overflow-hidden">
+              <span className="absolute top-2 left-2 z-10 bg-card/80 backdrop-blur-sm text-foreground text-[10px] md:text-xs font-semibold px-3 py-1 rounded-lg border border-border">
+                Sale
+              </span>
               <img
                 src={p.image}
                 alt={p.name}
@@ -95,21 +109,24 @@ const ProductGrid = () => {
                 loading="lazy"
               />
             </div>
-            <div className="p-5 flex flex-col flex-1">
-              <div className="flex justify-between items-start mb-3">
-                <h3 className="font-semibold text-foreground text-sm flex-1">{p.name}</h3>
-                <span className="bg-sale text-primary-foreground text-[10px] font-bold px-2 py-0.5 rounded-full ml-2">SALE</span>
+
+            {/* Content */}
+            <div className="p-3 md:p-5 flex flex-col flex-1 items-center text-center">
+              <h3 className="font-heading text-sm md:text-lg text-foreground mb-2 md:mb-3 uppercase leading-tight">
+                {p.name}
+              </h3>
+              <div className="flex items-baseline gap-2 mb-3 md:mb-4">
+                <span className="text-muted-foreground line-through text-xs md:text-sm">{p.old}</span>
+                <span className="text-lg md:text-2xl font-bold text-foreground">{p.price}</span>
               </div>
-              <div className="flex items-baseline gap-2 mb-4">
-                <span className="text-lg font-bold text-primary-light">{p.price}</span>
-                <span className="text-muted-foreground line-through text-xs">{p.old}</span>
-              </div>
-              <div className="flex gap-2 mt-auto">
-                <button className="flex-1 border border-primary/40 text-primary-light text-xs py-2 rounded-lg hover:bg-primary/10 transition-colors font-medium">Details +</button>
+              <div className="flex flex-col gap-2 w-full mt-auto">
+                <button className="w-full border border-border text-foreground text-xs md:text-sm py-2 md:py-2.5 rounded-lg hover:bg-primary/10 transition-colors font-heading tracking-wide uppercase">
+                  Details +
+                </button>
                 <button
                   onClick={() => handleBuy(p.priceId)}
                   disabled={loadingId === p.priceId}
-                  className="flex-1 bg-primary text-primary-foreground text-xs py-2 rounded-lg hover:bg-primary-light transition-colors font-medium disabled:opacity-50"
+                  className="w-full bg-primary text-primary-foreground text-xs md:text-sm py-2 md:py-2.5 rounded-lg hover:bg-primary-light transition-colors font-heading tracking-wide uppercase disabled:opacity-50"
                 >
                   {loadingId === p.priceId ? "Loading..." : "Buy Now"}
                 </button>
