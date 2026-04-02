@@ -26,7 +26,7 @@ const TickerBanner = () => {
     "✅ Trusted Suppliers",
     "Instant Access After Purchase⚡",
     `⏳ Price increasing in ${m}:${sc}`,
-    `👀 ${viewers} people viewing now`,
+    `🔴 ${viewers} people viewing now`,
   ];
 
   const text = items.join("   ·   ") + "   ·   ";
