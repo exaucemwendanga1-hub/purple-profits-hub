@@ -8,7 +8,7 @@ const Footer = () => (
           <a key={l} href="#" className="text-muted-foreground hover:text-foreground text-sm transition-colors">{l}</a>
         ))}
       </div>
-      <p className="text-muted-foreground text-sm">© 2026 YourResells. All rights reserved.</p>
+      <p className="text-muted-foreground text-sm">© 2026 2SauceLLC All rights reserved.</p>
     </div>
   </footer>
 );
