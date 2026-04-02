@@ -117,3 +117,12 @@
 .animate-proof-scroll {
   animation: proof-scroll 20s linear infinite;
 }
+
+@keyframes reviews-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-reviews-scroll {
+  animation: reviews-scroll 35s linear infinite;
+}
