@@ -8,20 +8,30 @@ const products = [
   { name: "Luxury Watch Supplier", price: "$11.99", old: "$19.99", emoji: "⌚", priceId: "price_1TGvFmPkl9P0JJ5qY6nfhFdm" },
   { name: "Earbud Supplier", price: "$11.99", old: "$19.99", emoji: "🎧", priceId: "price_1TGvG8Pkl9P0JJ5q5S2l1ceZ" },
   { name: "Cologne Supplier", price: "$11.99", old: "$19.99", emoji: "🧴", priceId: "price_1TGvH6Pkl9P0JJ5q4mg7eLmk" },
-  
   { name: "Puffer Jacket Supplier", price: "$11.99", old: "$19.99", emoji: "🧥", priceId: "price_1TGvIwPkl9P0JJ5qVtH9gE7c" },
 ];
 
 const ProductGrid = () => {
   const [loadingId, setLoadingId] = useState<string | null>(null);
+  const [couponCode, setCouponCode] = useState("");
+  const [couponApplied, setCouponApplied] = useState(false);
 
   const handleBuy = async (priceId: string) => {
     setLoadingId(priceId);
     try {
+      const body: any = { priceId };
+      if (couponCode.trim()) {
+        body.couponCode = couponCode.trim();
+      }
+
       const { data, error } = await supabase.functions.invoke("create-payment", {
-        body: { priceId },
+        body,
       });
       if (error) throw error;
+      if (data?.error) {
+        toast.error(data.error);
+        return;
+      }
       if (data?.url) {
         window.open(data.url, "_blank");
       }
@@ -34,7 +44,39 @@ const ProductGrid = () => {
 
   return (
     <section id="products" className="container mx-auto px-4 py-16">
-      <h2 className="font-heading text-4xl md:text-5xl text-center text-foreground mb-12">All Products</h2>
+      <h2 className="font-heading text-4xl md:text-5xl text-center text-foreground mb-8">All Products</h2>
+
+      {/* Coupon Code Input */}
+      <div className="max-w-md mx-auto mb-10">
+        <div className="flex gap-2">
+          <input
+            type="text"
+            placeholder="Enter coupon code"
+            value={couponCode}
+            onChange={(e) => {
+              setCouponCode(e.target.value.toUpperCase());
+              setCouponApplied(false);
+            }}
+            className="flex-1 bg-card border border-border rounded-xl px-4 py-2.5 text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-colors"
+          />
+          <button
+            onClick={() => {
+              if (couponCode.trim()) {
+                setCouponApplied(true);
+                toast.success("Coupon will be applied at checkout!");
+              }
+            }}
+            className="bg-primary text-primary-foreground px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-primary-light transition-colors"
+          >
+            Apply
+          </button>
+        </div>
+        {couponApplied && (
+          <p className="text-sm text-green-400 mt-2">✓ Coupon "{couponCode}" will be applied at checkout</p>
+        )}
+        <p className="text-muted-foreground text-xs mt-1">You can also enter coupon codes directly on the checkout page</p>
+      </div>
+
       <div className="grid gap-5" style={{ gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))" }}>
         {products.map((p) => (
           <div key={p.name} className="group bg-card border border-border rounded-xl p-5 flex flex-col transition-all hover:-translate-y-1 hover:border-primary/50 hover:glow-purple-sm">
