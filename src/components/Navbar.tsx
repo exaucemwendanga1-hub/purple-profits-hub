@@ -68,11 +68,11 @@ const Navbar = () => {
           )}
           <Link
             to={user ? "/account" : "/auth"}
-            className="flex items-center gap-1.5 text-primary-light hover:text-primary py-2"
+            className="flex items-center gap-2 bg-primary text-primary-foreground px-6 py-2.5 rounded-lg font-semibold mt-1"
             onClick={() => setOpen(false)}
           >
             <User size={16} />
-            {user ? "Account" : "Sign In"}
+            {user ? "My Account" : "Sign In"}
           </Link>
         </div>
       )}
