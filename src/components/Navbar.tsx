@@ -61,6 +61,11 @@ const Navbar = () => {
             <button key={id} onClick={() => scrollTo(id)} className="text-muted-foreground hover:text-foreground py-2">{label}</button>
           ))}
           <a href="sms:+16399949261" className="text-muted-foreground hover:text-foreground py-2">Contact</a>
+          {isAdmin && (
+            <Link to="/admin" className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground py-2" onClick={() => setOpen(false)}>
+              <BarChart3 size={16} /> Dashboard
+            </Link>
+          )}
           <Link
             to={user ? "/account" : "/auth"}
             className="flex items-center gap-1.5 text-primary-light hover:text-primary py-2"
