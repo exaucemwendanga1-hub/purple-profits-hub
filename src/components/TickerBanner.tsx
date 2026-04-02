@@ -16,14 +16,17 @@ const TickerBanner = () => {
     return () => clearInterval(t);
   }, []);
 
+  const m = Math.floor(seconds / 60).toString().padStart(2, "0");
+  const sc = (seconds % 60).toString().padStart(2, "0");
+
   const items = [
     "🔥 500+ Happy Customers",
     "⭐ Rated 4.8/5 ★★★★",
     "🌍 Worldwide Shipping Available",
     "✅ Trusted Suppliers",
     "Instant Access After Purchase⚡",
-    `⏳ Price increasing in ${m}:${s}`,
-    "👀 73 people viewing now",
+    `⏳ Price increasing in ${m}:${sc}`,
+    `👀 ${viewers} people viewing now`,
   ];
 
   const text = items.join("   ·   ") + "   ·   ";
