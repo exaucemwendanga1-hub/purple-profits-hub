@@ -4,15 +4,14 @@ import { toast } from "sonner";
 
 const products = [
   { name: "All Supplier Bundle", price: "$24.99", old: "$74.99", emoji: "📦", priceId: "price_1TG8uJPkl9P0JJ5qx0TQ3ccH" },
-  { name: "Shoe Supplier", price: "$9.99", old: "$19.99", emoji: "👟", priceId: "price_1TG96qPkl9P0JJ5qXGXtNrmk" },
-  { name: "Luxury Watch Supplier", price: "$9.99", old: "$19.99", emoji: "⌚", priceId: "price_1TGvFmPkl9P0JJ5qY6nfhFdm" },
-  { name: "Earbud Supplier", price: "$9.99", old: "$19.99", emoji: "🎧", priceId: "price_1TGvG8Pkl9P0JJ5q5S2l1ceZ" },
-  { name: "Cologne Supplier", price: "$9.99", old: "$19.99", emoji: "🧴", priceId: "price_1TGvH6Pkl9P0JJ5q4mg7eLmk" },
-  { name: "Luxury Glasses Supplier", price: "$9.99", old: "$19.99", emoji: "🕶️", priceId: "price_1TGvIHPkl9P0JJ5q5dIn0rk9" },
-  { name: "Puffer Jacket Supplier", price: "$9.99", old: "$19.99", emoji: "🧥", priceId: "price_1TGvIwPkl9P0JJ5qVtH9gE7c" },
-  { name: "Tech Supplier", price: "$9.99", old: "$19.99", emoji: "📱", priceId: "price_1TGvM7Pkl9P0JJ5qMYG2mdtE" },
-  { name: "Belt Supplier", price: "$9.99", old: "$19.99", emoji: "🪢", priceId: "price_1TGvMTPkl9P0JJ5qQ7c79u8b" },
-];
+  { name: "Shoe Supplier", price: "$11.99", old: "$19.99", emoji: "👟", priceId: "price_1TG96qPkl9P0JJ5qXGXtNrmk" },
+  { name: "Luxury Watch Supplier", price: "$11.99", old: "$19.99", emoji: "⌚", priceId: "price_1TGvFmPkl9P0JJ5qY6nfhFdm" },
+  { name: "Earbud Supplier", price: "$11.99", old: "$19.99", emoji: "🎧", priceId: "price_1TGvG8Pkl9P0JJ5q5S2l1ceZ" },
+  { name: "Cologne Supplier", price: "$11.99", old: "$19.99", emoji: "🧴", priceId: "price_1TGvH6Pkl9P0JJ5q4mg7eLmk" },
+  
+  { name: "Puffer Jacket Supplier", price: "$11.99", old: "$19.99", emoji: "🧥", priceId: "price_1TGvIwPkl9P0JJ5qVtH9gE7c" },
+
+
 
 const ProductGrid = () => {
   const [loadingId, setLoadingId] = useState<string | null>(null);
