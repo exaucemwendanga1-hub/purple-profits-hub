@@ -18,8 +18,8 @@ const Index = () => (
     <StatsRow />
     <ProductGrid />
     <ProofSection />
-    <WhyChooseUs />
     <ReviewsGrid />
+    <WhyChooseUs />
     <FAQSection />
     <CTASection />
     <Footer />
