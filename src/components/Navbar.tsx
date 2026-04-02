@@ -1,9 +1,12 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, User } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useAuth } from "@/hooks/useAuth";
 import logo from "@/assets/logo_new.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const { user } = useAuth();
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -20,6 +23,13 @@ const Navbar = () => {
             <button key={id} onClick={() => scrollTo(id)} className="text-muted-foreground hover:text-foreground transition-colors font-medium">{label}</button>
           ))}
           <a href="sms:+16399949261" className="text-muted-foreground hover:text-foreground transition-colors font-medium">Contact</a>
+          <Link
+            to={user ? "/account" : "/auth"}
+            className="flex items-center gap-1.5 text-primary-light hover:text-primary transition-colors font-medium"
+          >
+            <User size={16} />
+            {user ? "Account" : "Sign In"}
+          </Link>
         </div>
 
         <button className="md:hidden absolute right-4 top-6 text-foreground" onClick={() => setOpen(!open)}>
@@ -33,6 +43,14 @@ const Navbar = () => {
             <button key={id} onClick={() => scrollTo(id)} className="text-muted-foreground hover:text-foreground py-2">{label}</button>
           ))}
           <a href="sms:+16399949261" className="text-muted-foreground hover:text-foreground py-2">Contact</a>
+          <Link
+            to={user ? "/account" : "/auth"}
+            className="flex items-center gap-1.5 text-primary-light hover:text-primary py-2"
+            onClick={() => setOpen(false)}
+          >
+            <User size={16} />
+            {user ? "Account" : "Sign In"}
+          </Link>
         </div>
       )}
     </nav>

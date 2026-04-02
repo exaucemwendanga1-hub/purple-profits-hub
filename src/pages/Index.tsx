@@ -2,12 +2,12 @@ import TickerBanner from "@/components/TickerBanner";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import StatsRow from "@/components/StatsRow";
-
 import ProductGrid from "@/components/ProductGrid";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import ReviewsGrid from "@/components/ReviewsGrid";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import Footer from "@/components/Footer";
 
 const Index = () => (
@@ -18,9 +18,9 @@ const Index = () => (
     <StatsRow />
     <ProductGrid />
     <FAQSection />
-    
     <ReviewsGrid />
     <WhyChooseUs />
+    <NewsletterSignup />
     <CTASection />
     <Footer />
   </div>
