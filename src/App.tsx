@@ -14,6 +14,7 @@ import ShippingPolicy from "./pages/ShippingPolicy.tsx";
 import RefundPolicy from "./pages/RefundPolicy.tsx";
 import Auth from "./pages/Auth.tsx";
 import Account from "./pages/Account.tsx";
+import Admin from "./pages/Admin.tsx";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/account" element={<Account />} />
+            <Route path="/admin" element={<Admin />} />
             <Route path="/payment-success" element={<PaymentSuccess />} />
             <Route path="/unsubscribe" element={<Unsubscribe />} />
             <Route path="/terms" element={<TermsOfService />} />

@@ -1,12 +1,24 @@
-import { useState } from "react";
-import { Menu, X, User } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X, User, BarChart3 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useAuth } from "@/hooks/useAuth";
+import { supabase } from "@/integrations/supabase/client";
 import logo from "@/assets/logo_new.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const { user } = useAuth();
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    if (!user) { setIsAdmin(false); return; }
+    supabase
+      .from("user_roles")
+      .select("role")
+      .eq("user_id", user.id)
+      .eq("role", "admin")
+      .then(({ data }) => setIsAdmin(!!data?.length));
+  }, [user]);
 
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
@@ -23,6 +35,12 @@ const Navbar = () => {
             <button key={id} onClick={() => scrollTo(id)} className="text-muted-foreground hover:text-foreground transition-colors font-medium">{label}</button>
           ))}
           <a href="sms:+16399949261" className="text-muted-foreground hover:text-foreground transition-colors font-medium">Contact</a>
+          {isAdmin && (
+            <Link to="/admin" className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors font-medium">
+              <BarChart3 size={16} />
+              Dashboard
+            </Link>
+          )}
           <Link
             to={user ? "/account" : "/auth"}
             className="flex items-center gap-1.5 text-primary-light hover:text-primary transition-colors font-medium"
@@ -43,6 +61,11 @@ const Navbar = () => {
             <button key={id} onClick={() => scrollTo(id)} className="text-muted-foreground hover:text-foreground py-2">{label}</button>
           ))}
           <a href="sms:+16399949261" className="text-muted-foreground hover:text-foreground py-2">Contact</a>
+          {isAdmin && (
+            <Link to="/admin" className="flex items-center gap-1.5 text-muted-foreground hover:text-foreground py-2" onClick={() => setOpen(false)}>
+              <BarChart3 size={16} /> Dashboard
+            </Link>
+          )}
           <Link
             to={user ? "/account" : "/auth"}
             className="flex items-center gap-1.5 text-primary-light hover:text-primary py-2"
