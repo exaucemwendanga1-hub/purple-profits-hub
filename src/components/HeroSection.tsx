@@ -8,7 +8,7 @@ const HeroSection = () => {
       <div className="relative container mx-auto px-4 text-center">
         <h1 className="font-heading text-5xl sm:text-6xl md:text-8xl leading-none mb-6 text-foreground">
           greceive instant access to<br />
-          <span className="text-gradient-purple glow-purple-sm">top quality suppliers!</span>
+          <span className="text-gradient-purple">top quality suppliers!</span>
         </h1>
         <p className="text-2xl md:text-3xl font-semibold text-foreground mb-4">Top quality suppliers</p>
         <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10">
