@@ -17,10 +17,10 @@ const Index = () => (
     <HeroSection />
     <StatsRow />
     <ProductGrid />
+    <FAQSection />
     <ProofSection />
     <ReviewsGrid />
     <WhyChooseUs />
-    <FAQSection />
     <CTASection />
     <Footer />
   </div>
