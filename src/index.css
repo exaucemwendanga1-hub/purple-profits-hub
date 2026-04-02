@@ -95,3 +95,12 @@
 .animate-pulse-dot {
   animation: pulse-dot 1.5s ease-in-out infinite;
 }
+
+@keyframes proof-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-proof-scroll {
+  animation: proof-scroll 20s linear infinite;
+}
