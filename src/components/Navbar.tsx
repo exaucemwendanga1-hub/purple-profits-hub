@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "@/assets/logo_transparent.png";
+import logo from "@/assets/logo_new.png";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -12,8 +12,8 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
-      <div className="container mx-auto flex flex-col items-center py-3 px-4">
-        <img src={logo} alt="ZSauce LLC" className="h-36 md:h-44 cursor-pointer object-fill text-xl font-extrabold" onClick={() => scrollTo("hero")} />
+      <div className="container mx-auto py-3 px-4 items-center justify-center flex flex-col gap-0">
+        <img src={logo} alt="ZSauce LLC" className="h-36 md:h-44 cursor-pointer text-xl font-extrabold object-fill" onClick={() => scrollTo("hero")} />
         
         <div className="hidden md:flex items-center gap-8 mt-2">
           {[["Home","hero"],["Products","products"],["FAQ","faq"]].map(([label, id]) => (
