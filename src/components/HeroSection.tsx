@@ -10,7 +10,7 @@ const HeroSection = () => {
           greceive instant access to<br />
           <span className="text-8xl font-extrabold text-[#715ccc] drop-shadow-[0_0_25px_rgba(113,92,204,0.8)] drop-shadow-[0_0_50px_rgba(113,92,204,0.4)]">top quality suppliers!</span>
         </h1>
-        <p className="text-2xl md:text-3xl font-semibold text-foreground mb-4">Top quality suppliers</p>
+        
         <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10">
           Premium supplier lists at unbeatable prices. Start your journey today with trusted, varified sources.
         </p>
