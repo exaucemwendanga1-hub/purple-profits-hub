@@ -29,6 +29,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/account" element={<Account />} />
+            <Route path="/admin" element={<Admin />} />
             <Route path="/payment-success" element={<PaymentSuccess />} />
             <Route path="/unsubscribe" element={<Unsubscribe />} />
             <Route path="/terms" element={<TermsOfService />} />
