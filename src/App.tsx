@@ -14,6 +14,7 @@ import ShippingPolicy from "./pages/ShippingPolicy.tsx";
 import RefundPolicy from "./pages/RefundPolicy.tsx";
 import Auth from "./pages/Auth.tsx";
 import Account from "./pages/Account.tsx";
+import Admin from "./pages/Admin.tsx";
 
 const queryClient = new QueryClient();
 
