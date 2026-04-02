@@ -1,4 +1,10 @@
-const links = ["Terms of Service", "Contact", "Privacy Policy", "Shipping Policy", "Refund Policy"];
+const links = [
+  { label: "Terms of Service", href: "#" },
+  { label: "Contact", href: "sms:+16399949261" },
+  { label: "Privacy Policy", href: "#" },
+  { label: "Shipping Policy", href: "#" },
+  { label: "Refund Policy", href: "#" },
+];
 
 const Footer = () => (
   <footer className="border-t border-border bg-secondary/30 py-10">
