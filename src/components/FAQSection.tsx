@@ -1,11 +1,11 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const faqs = [
+  { q: "How much does it cost?", a: "Our supplier lists start at just $9.99. The all-in-one bundle is $24.99 — a fraction of what you'd pay elsewhere." },
+  { q: "How fast do I get access?", a: "Instantly! After purchase, you'll receive access via email with a download link. No waiting required." },
+  { q: "Is this legit?", a: "Absolutely! We have over 1,000 happy customers and a 5-star rating. Every supplier is verified and vetted." },
   { q: "How much do the suppliers charge for a product?", a: "Prices range from $10–$200 depending on the product category. You'll find detailed pricing in each supplier list." },
-  { q: "How fast is shipping?", a: "Shipping from suppliers typically takes 3–10 business days depending on location and product. Many suppliers also offer express options." },
-  { q: "Is this beginner friendly?", a: "Absolutely! Each supplier list comes with step-by-step instructions, direct links, and contact info. No prior experience needed." },
-  { q: "What does buying a supplier get me?", a: "You get instant access to trusted, verified suppliers offering products at competitive wholesale prices. Each list includes direct links, contact info, and product catalogs." },
-  { q: "How will I receive access?", a: "Instantly! After purchase, you'll receive access via email with a download link. No waiting required." },
+  { q: "Is this beginner friendly?", a: "Yes! Each supplier list comes with step-by-step instructions, direct links, and contact info. No prior experience needed." },
 ];
 
 const FAQSection = () => (
