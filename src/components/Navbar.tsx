@@ -28,7 +28,7 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl">
       <div className="container mx-auto py-4 px-4 items-center justify-center flex flex-col gap-0">
-        <img src={logo} alt="ZSauce LLC" className="h-16 md:h-20 cursor-pointer object-contain" onClick={() => scrollTo("hero")} />
+        <img src={logo} alt="2Sauce LLC" className="h-24 md:h-32 cursor-pointer object-contain" onClick={() => scrollTo("hero")} />
         
         <div className="hidden md:flex items-center gap-8 mt-2">
           {[["Home","hero"],["Products","products"],["FAQ","faq"]].map(([label, id]) => (
