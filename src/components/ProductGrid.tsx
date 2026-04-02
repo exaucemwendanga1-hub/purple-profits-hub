@@ -72,7 +72,7 @@ const ProductGrid = () => {
           </button>
         </div>
         {couponApplied && (
-          <p className="text-sm text-green-400 mt-2">✓ Coupon "{couponCode}" will be applied at checkout</p>
+          <p className="text-sm text-primary-light mt-2">✓ Coupon "{couponCode}" will be applied at checkout</p>
         )}
         <p className="text-muted-foreground text-xs mt-1">You can also enter coupon codes directly on the checkout page</p>
       </div>
