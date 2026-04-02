@@ -1,3 +1,4 @@
+import TickerBanner from "@/components/TickerBanner";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import StatsRow from "@/components/StatsRow";
@@ -11,6 +12,7 @@ import Footer from "@/components/Footer";
 
 const Index = () => (
   <div className="min-h-screen bg-background">
+    <TickerBanner />
     <Navbar />
     <HeroSection />
     <StatsRow />
