@@ -67,7 +67,7 @@ const ReviewsGrid = () => {
           ))}
         </div>
         <p className="text-muted-foreground text-sm">
-          Rated {avgRating} out of 5 stars · {allReviews.length} reviews
+          Rated {avgRating} out of 5 stars
         </p>
       </div>
 
