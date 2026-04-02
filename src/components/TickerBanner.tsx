@@ -21,12 +21,12 @@ const TickerBanner = () => {
 
   const items = [
     "🔥 500+ Happy Customers",
-    "⭐ Rated 4.8/5 ★★★★",
+    "⭐ Rated 5/5",
     "🌍 Worldwide Shipping Available",
     "✅ Trusted Suppliers",
     "Instant Access After Purchase⚡",
-    `⏳ Price increasing in ${m}:${sc}`,
-    `🔴 ${viewers} people viewing now`,
+    `⏳ Sale ends in ${m}:${sc}`,
+    `🔴 ${viewers} live viewers`,
   ];
 
   const text = items.join("   ·   ") + "   ·   ";
