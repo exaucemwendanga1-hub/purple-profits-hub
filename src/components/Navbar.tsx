@@ -13,7 +13,7 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border">
       <div className="container mx-auto flex flex-col items-center py-3 px-4">
-        <img src={logo} alt="ZSauce LLC" className="h-20 cursor-pointer" onClick={() => scrollTo("hero")} />
+        <img src={logo} alt="ZSauce LLC" className="h-36 md:h-44 cursor-pointer" onClick={() => scrollTo("hero")} />
         
         <div className="hidden md:flex items-center gap-8 mt-2">
           {[["Home","hero"],["Products","products"],["FAQ","faq"]].map(([label, id]) => (
