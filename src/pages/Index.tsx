@@ -2,7 +2,7 @@ import TickerBanner from "@/components/TickerBanner";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import StatsRow from "@/components/StatsRow";
-import ProofSection from "@/components/ProofSection";
+
 import ProductGrid from "@/components/ProductGrid";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import ReviewsGrid from "@/components/ReviewsGrid";
@@ -18,7 +18,7 @@ const Index = () => (
     <StatsRow />
     <ProductGrid />
     <FAQSection />
-    <ProofSection />
+    
     <ReviewsGrid />
     <WhyChooseUs />
     <CTASection />
