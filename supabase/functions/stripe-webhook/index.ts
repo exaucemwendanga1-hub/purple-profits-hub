@@ -47,7 +47,6 @@ serve(async (req) => {
       return new Response("Webhook signature verification failed", { status: 400 });
     }
   } else {
-    // No webhook secret configured — parse event directly (less secure, for dev)
     event = JSON.parse(body);
   }
 
@@ -60,9 +59,12 @@ serve(async (req) => {
       return new Response(JSON.stringify({ received: true }), { status: 200 });
     }
 
-    // Get line items to find which product was purchased
     const lineItems = await stripe.checkout.sessions.listLineItems(session.id);
     const supabase = createClient(supabaseUrl, supabaseServiceKey);
+
+    // Try to find a user by email to link the order
+    const { data: userData } = await supabase.auth.admin.listUsers();
+    const matchedUser = userData?.users?.find(u => u.email === customerEmail);
 
     for (const item of lineItems.data) {
       const priceId = item.price?.id;
@@ -74,11 +76,30 @@ serve(async (req) => {
         continue;
       }
 
+      // Save order to database
+      const { error: orderError } = await supabase
+        .from("orders")
+        .insert({
+          user_id: matchedUser?.id || null,
+          stripe_session_id: session.id,
+          customer_email: customerEmail,
+          product_name: product.name,
+          price_id: priceId,
+          amount: item.amount_total || 0,
+          currency: item.currency || "usd",
+          status: "completed",
+          digital_asset_path: product.storagePath,
+        });
+
+      if (orderError) {
+        console.error("Failed to save order:", orderError);
+      }
+
       // Generate a signed download URL (expires in 24 hours)
       const { data: signedUrlData, error: signedUrlError } = await supabase
         .storage
         .from("digital-products")
-        .createSignedUrl(product.storagePath, 60 * 60 * 24); // 24 hours
+        .createSignedUrl(product.storagePath, 60 * 60 * 24);
 
       if (signedUrlError || !signedUrlData?.signedUrl) {
         console.error("Failed to create signed URL", {
@@ -101,7 +122,7 @@ serve(async (req) => {
         },
       });
 
-      console.log("Product delivery email sent", {
+      console.log("Order saved & delivery email sent", {
         email: customerEmail,
         product: product.name,
         sessionId: session.id,
