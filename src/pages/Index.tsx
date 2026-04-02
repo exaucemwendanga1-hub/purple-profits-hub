@@ -18,7 +18,7 @@ const Index = () => (
     <StatsRow />
     <ProductGrid />
     <FAQSection />
-    <ProofSection />
+    
     <ReviewsGrid />
     <WhyChooseUs />
     <CTASection />
