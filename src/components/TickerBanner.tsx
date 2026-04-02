@@ -35,7 +35,7 @@ const TickerBanner = () => {
     <div className="bg-secondary border-b border-border py-1.5 overflow-hidden">
       <div className="flex whitespace-nowrap animate-marquee">
         {[...Array(4)].map((_, i) => (
-          <span key={i} className="text-xs md:text-sm font-semibold text-foreground/90">
+          <span key={i} className="md:text-sm text-foreground/90 text-base font-serif font-extrabold opacity-100 border-none my-[6px] py-[6px]">
             {text}
           </span>
         ))}
