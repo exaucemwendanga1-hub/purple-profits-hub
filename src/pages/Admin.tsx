@@ -8,6 +8,7 @@ import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from "recharts";
 import { DollarSign, ShoppingCart, TrendingUp, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { AdminFileManager } from "@/components/AdminFileManager";
 
 interface OrderStats {
   totalRevenue: number;
@@ -215,6 +216,11 @@ const Admin = () => {
         ) : (
           <p className="text-muted-foreground">No data available.</p>
         )}
+
+        {/* Digital Product File Manager */}
+        <div className="mt-8">
+          <AdminFileManager />
+        </div>
       </div>
     </div>
   );
