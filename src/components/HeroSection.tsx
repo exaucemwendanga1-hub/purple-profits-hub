@@ -7,7 +7,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-radial-purple opacity-50 animate-pulse" />
       <div className="relative container mx-auto px-4 text-center">
         <h1 className="font-heading text-5xl sm:text-6xl md:text-8xl leading-none mb-6 text-foreground">
-          greceive instant access to<br />
+          receive instant access to<br />
           <span className="text-8xl font-extrabold text-[#715ccc] drop-shadow-[0_0_25px_rgba(113,92,204,0.8)] drop-shadow-[0_0_50px_rgba(113,92,204,0.4)]">top quality suppliers!</span>
         </h1>
         
