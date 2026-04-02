@@ -216,6 +216,11 @@ const Admin = () => {
         ) : (
           <p className="text-muted-foreground">No data available.</p>
         )}
+
+        {/* Digital Product File Manager */}
+        <div className="mt-8">
+          <AdminFileManager />
+        </div>
       </div>
     </div>
   );
