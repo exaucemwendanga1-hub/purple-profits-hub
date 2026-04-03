@@ -110,6 +110,20 @@ serve(async (req) => {
         continue;
       }
 
+      // Send order confirmation email
+      await supabase.functions.invoke("send-transactional-email", {
+        body: {
+          templateName: "order-confirmation",
+          recipientEmail: customerEmail,
+          idempotencyKey: `order-confirm-${session.id}-${priceId}`,
+          templateData: {
+            productName: product.name,
+            amount: `$${((item.amount_total || 0) / 100).toFixed(2)}`,
+            customerEmail,
+          },
+        },
+      });
+
       // Send product delivery email
       await supabase.functions.invoke("send-transactional-email", {
         body: {
