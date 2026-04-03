@@ -64,6 +64,52 @@ const Auth = () => {
     }
   };
 
+  if (isForgotPassword) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center px-4">
+        <div className="w-full max-w-md">
+          <h1 className="font-heading text-4xl text-foreground text-center mb-8">
+            Reset Password
+          </h1>
+
+          <form onSubmit={handleForgotPassword} className="bg-card border border-border rounded-xl p-6 space-y-4">
+            <p className="text-sm text-muted-foreground">
+              Enter your email and we'll send you a link to reset your password.
+            </p>
+            <div>
+              <label className="block text-sm text-muted-foreground mb-1">Email</label>
+              <input
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full bg-background border border-border rounded-lg px-4 py-2.5 text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-colors"
+                placeholder="you@example.com"
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full bg-primary text-primary-foreground py-3 rounded-lg font-semibold hover:bg-primary-light transition-colors disabled:opacity-50"
+            >
+              {loading ? "Sending..." : "Send Reset Link"}
+            </button>
+          </form>
+
+          <div className="text-center mt-4">
+            <button
+              onClick={() => setIsForgotPassword(false)}
+              className="text-muted-foreground text-sm hover:text-foreground transition-colors"
+            >
+              ← Back to sign in
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-background flex items-center justify-center px-4">
       <div className="w-full max-w-md">
