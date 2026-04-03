@@ -8,7 +8,7 @@ const CTASection = () => (
       </p>
       <button
         onClick={() => document.getElementById("products")?.scrollIntoView({ behavior: "smooth" })}
-        className="bg-primary hover:bg-primary-light text-primary-foreground px-10 py-4 rounded-full font-semibold text-lg transition-all glow-purple hover:scale-105"
+        className="bg-primary hover:bg-primary-light text-primary-foreground px-10 py-4 rounded-full font-semibold text-lg transition-all glow-neon hover:scale-105"
       >
         Get Started Now →
       </button>

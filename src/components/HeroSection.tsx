@@ -14,7 +14,7 @@ const HeroSection = () => {
         <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10">
           Premium supplier lists at unbeatable prices. Start your journey today with trusted, varified sources.
         </p>
-        <button onClick={scrollTo} className="bg-primary hover:bg-primary-light text-primary-foreground px-10 py-4 rounded-full font-semibold text-lg transition-all glow-purple hover:scale-105">
+        <button onClick={scrollTo} className="bg-primary hover:bg-primary-light text-primary-foreground px-10 py-4 rounded-full font-semibold text-lg transition-all glow-neon hover:scale-105">
           Start Now →
         </button>
       </div>
