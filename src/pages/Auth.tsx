@@ -156,6 +156,18 @@ const Auth = () => {
             />
           </div>
 
+          {isLogin && (
+            <div className="text-right">
+              <button
+                type="button"
+                onClick={() => setIsForgotPassword(true)}
+                className="text-xs text-muted-foreground hover:text-primary-light transition-colors"
+              >
+                Forgot password?
+              </button>
+            </div>
+          )}
+
           <button
             type="submit"
             disabled={loading}
