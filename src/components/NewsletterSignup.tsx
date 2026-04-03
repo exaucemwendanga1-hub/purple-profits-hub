@@ -16,7 +16,7 @@ const NewsletterSignup = () => {
     try {
       const { error } = await supabase
         .from("newsletter_subscribers")
-        .insert({ email, first_name: firstName || null });
+        .insert({ email });
 
       if (error) {
         if (error.code === "23505") {
