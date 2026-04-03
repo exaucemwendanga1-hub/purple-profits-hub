@@ -10,7 +10,7 @@ import productPuffer from "@/assets/product-puffer.png";
 import productJewelry from "@/assets/product-jewelry.png";
 
 const products = [
-  { name: "All Supplier Bundle", price: "$24.99", old: "$74.99", image: productJewelry, priceId: "price_1TG8uJPkl9P0JJ5qx0TQ3ccH", bestDeal: true, description: "Get access to all supplier lists in one bundle. Includes shoes, watches, earbuds, cologne, puffer jackets & more. Updated weekly." },
+  { name: "All Supplier Bundle", price: "$25.99", old: "$74.99", image: productJewelry, priceId: "price_1TG8uJPkl9P0JJ5qx0TQ3ccH", bestDeal: true, description: "Get access to all supplier lists in one bundle. Includes shoes, watches, earbuds, cologne, puffer jackets & more. Updated weekly." },
   { name: "Shoe Supplier", price: "$11.99", old: "$19.99", image: productShoes, priceId: "price_1TG96qPkl9P0JJ5qXGXtNrmk", description: "Premium shoe suppliers for trending sneakers and designer footwear at wholesale prices." },
   { name: "Luxury Watch Supplier", price: "$11.99", old: "$19.99", image: productWatch, priceId: "price_1TGvFmPkl9P0JJ5qY6nfhFdm", description: "Trusted luxury watch suppliers with verified quality and competitive pricing." },
   { name: "Earbud Supplier", price: "$11.99", old: "$19.99", image: productEarbuds, priceId: "price_1TGvG8Pkl9P0JJ5q5S2l1ceZ", description: "Top-rated earbud and headphone suppliers with the latest models at wholesale." },
