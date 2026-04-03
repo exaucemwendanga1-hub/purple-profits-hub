@@ -4,7 +4,7 @@ import { toast } from "sonner";
 
 const NewsletterSignup = () => {
   const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
+  
   const [loading, setLoading] = useState(false);
   const [subscribed, setSubscribed] = useState(false);
 
