@@ -7,8 +7,8 @@ const FeaturedCard = () => (
       </div>
       <h2 className="font-heading text-4xl md:text-5xl text-foreground mb-2">Ultimate Resellers Pack ⭐</h2>
       <div className="flex items-baseline gap-3 mb-4">
-        <span className="text-3xl font-bold text-primary-light">$34.99</span>
-        <span className="text-muted-foreground line-through text-lg">$99.99</span>
+        <span className="text-3xl font-bold text-primary-light">$34.99 CAD</span>
+        <span className="text-muted-foreground line-through text-lg">$99.99 CAD</span>
         <span className="bg-primary/20 text-primary-light text-sm font-semibold px-3 py-1 rounded-full">Save 65%</span>
       </div>
       <p className="text-muted-foreground mb-8 max-w-lg">

@@ -10,12 +10,12 @@ import productPuffer from "@/assets/product-puffer.png";
 import productJewelry from "@/assets/product-jewelry.png";
 
 const products = [
-  { name: "All Supplier Bundle", price: "$25.99", old: "$74.99", image: productJewelry, priceId: "price_1TG8uJPkl9P0JJ5qx0TQ3ccH", bestDeal: true, description: "Get access to all supplier lists in one bundle. Includes shoes, watches, earbuds, cologne, puffer jackets & more. Updated weekly." },
-  { name: "Shoe Supplier", price: "$11.99", old: "$19.99", image: productShoes, priceId: "price_1TG96qPkl9P0JJ5qXGXtNrmk", description: "Premium shoe suppliers for trending sneakers and designer footwear at wholesale prices." },
-  { name: "Luxury Watch Supplier", price: "$11.99", old: "$19.99", image: productWatch, priceId: "price_1TGvFmPkl9P0JJ5qY6nfhFdm", description: "Trusted luxury watch suppliers with verified quality and competitive pricing." },
-  { name: "Earbud Supplier", price: "$11.99", old: "$19.99", image: productEarbuds, priceId: "price_1TGvG8Pkl9P0JJ5q5S2l1ceZ", description: "Top-rated earbud and headphone suppliers with the latest models at wholesale." },
-  { name: "Cologne Supplier", price: "$11.99", old: "$19.99", image: productCologne, priceId: "price_1TGvH6Pkl9P0JJ5q4mg7eLmk", description: "Authentic cologne and fragrance suppliers offering premium brands at unbeatable prices." },
-  { name: "Puffer Jacket Supplier", price: "$11.99", old: "$19.99", image: productPuffer, priceId: "price_1TGvIwPkl9P0JJ5qVtH9gE7c", description: "High-quality puffer jacket suppliers with trending styles and fast shipping." },
+  { name: "All Supplier Bundle", price: "$25.99 CAD", old: "$74.99 CAD", image: productJewelry, priceId: "price_1TG8uJPkl9P0JJ5qx0TQ3ccH", bestDeal: true, description: "Get access to all supplier lists in one bundle. Includes shoes, watches, earbuds, cologne, puffer jackets & more. Updated weekly." },
+  { name: "Shoe Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productShoes, priceId: "price_1TG96qPkl9P0JJ5qXGXtNrmk", description: "Premium shoe suppliers for trending sneakers and designer footwear at wholesale prices." },
+  { name: "Luxury Watch Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productWatch, priceId: "price_1TGvFmPkl9P0JJ5qY6nfhFdm", description: "Trusted luxury watch suppliers with verified quality and competitive pricing." },
+  { name: "Earbud Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productEarbuds, priceId: "price_1TGvG8Pkl9P0JJ5q5S2l1ceZ", description: "Top-rated earbud and headphone suppliers with the latest models at wholesale." },
+  { name: "Cologne Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productCologne, priceId: "price_1TGvH6Pkl9P0JJ5q4mg7eLmk", description: "Authentic cologne and fragrance suppliers offering premium brands at unbeatable prices." },
+  { name: "Puffer Jacket Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productPuffer, priceId: "price_1TGvIwPkl9P0JJ5qVtH9gE7c", description: "High-quality puffer jacket suppliers with trending styles and fast shipping." },
 ];
 
 const ProductGrid = () => {
