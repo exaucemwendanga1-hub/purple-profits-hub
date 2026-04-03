@@ -13,6 +13,7 @@ const PRODUCTS: Record<string, { name: string; storagePath: string }> = {
   "price_1TGvIwPkl9P0JJ5qVtH9gE7c": { name: "Puffer Jacket Supplier", storagePath: "puffer-jacket-supplier.pdf" },
   "price_1TGvM7Pkl9P0JJ5qMYG2mdtE": { name: "Tech Supplier", storagePath: "tech-supplier.pdf" },
   "price_1TGvMTPkl9P0JJ5qQ7c79u8b": { name: "Belt Supplier", storagePath: "belt-supplier.pdf" },
+  "price_1TICsCPkl9P0JJ5qikR7BRdq": { name: "Lulu Supplier", storagePath: "lulu-supplier.pdf" },
 };
 
 serve(async (req) => {
