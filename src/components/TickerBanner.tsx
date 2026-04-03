@@ -8,7 +8,7 @@ const TickerBanner = () => {
     "Instant Access After Purchase⚡",
   ];
 
-  const text = items.join("   ·   ") + "   ·   ";
+  const text = items.join("   ·   ") + "   ";
 
   return (
     <div className="bg-secondary border-b border-border py-1.5 overflow-hidden">
