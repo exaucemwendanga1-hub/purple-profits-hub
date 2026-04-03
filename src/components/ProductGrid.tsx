@@ -8,6 +8,7 @@ import productEarbuds from "@/assets/product-earbuds.png";
 import productCologne from "@/assets/product-cologne.png";
 import productPuffer from "@/assets/product-puffer.png";
 import productJewelry from "@/assets/product-jewelry.png";
+import productLulu from "@/assets/product-lulu.png";
 
 const products = [
   { name: "All Supplier Bundle", price: "$25.99 CAD", old: "$74.99 CAD", image: productJewelry, priceId: "price_1TG8uJPkl9P0JJ5qx0TQ3ccH", bestDeal: true, description: "Get access to all supplier lists in one bundle. Includes shoes, watches, earbuds, cologne, puffer jackets & more. Updated weekly." },
