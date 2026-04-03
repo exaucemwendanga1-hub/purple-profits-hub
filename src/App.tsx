@@ -13,6 +13,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
 import ShippingPolicy from "./pages/ShippingPolicy.tsx";
 import RefundPolicy from "./pages/RefundPolicy.tsx";
 import Auth from "./pages/Auth.tsx";
+import ResetPassword from "./pages/ResetPassword.tsx";
 import Account from "./pages/Account.tsx";
 import Admin from "./pages/Admin.tsx";
 
@@ -28,6 +29,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/auth" element={<Auth />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/account" element={<Account />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/payment-success" element={<PaymentSuccess />} />
