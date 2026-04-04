@@ -20,10 +20,8 @@ const EXPECTED_FILES = [
   "luxury-watch-supplier.pdf",
   "earbud-supplier.pdf",
   "cologne-supplier.pdf",
-  "luxury-glasses-supplier.pdf",
   "puffer-jacket-supplier.pdf",
-  "tech-supplier.pdf",
-  "belt-supplier.pdf",
+  "lulu-supplier.pdf",
 ];
 
 export const AdminFileManager = () => {
