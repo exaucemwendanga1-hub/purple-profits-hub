@@ -89,7 +89,7 @@ const ProductGrid = () => {
         <p className="text-muted-foreground text-xs mt-1">You can also enter coupon codes directly on the checkout page</p>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-5 max-w-4xl mx-auto">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-5 max-w-4xl mx-auto justify-items-center">
         {products.map((p) => (
           <div
             key={p.name}
