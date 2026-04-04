@@ -22,6 +22,7 @@ const EXPECTED_FILES = [
   "cologne-supplier.pdf",
   "puffer-jacket-supplier.pdf",
   "lulu-supplier.pdf",
+  "crm-supplier.pdf",
 ];
 
 export const AdminFileManager = () => {
