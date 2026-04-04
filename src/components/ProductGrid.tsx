@@ -89,11 +89,11 @@ const ProductGrid = () => {
         <p className="text-muted-foreground text-xs mt-1">You can also enter coupon codes directly on the checkout page</p>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-5 max-w-4xl mx-auto">
+      <div className="flex flex-wrap justify-center gap-4 md:gap-5 max-w-4xl mx-auto">
         {products.map((p) => (
           <div
             key={p.name}
-            className="relative group bg-card border border-foreground/30 rounded-2xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 hover:border-foreground/60 hover:glow-purple-sm cursor-pointer active:scale-[0.97] active:translate-y-0"
+            className="relative group bg-card border border-foreground/30 rounded-2xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 hover:border-foreground/60 hover:glow-purple-sm cursor-pointer active:scale-[0.97] active:translate-y-0 w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.875rem)]"
             onClick={() => handleBuy(p.priceId)}
           >
             {/* Best Deal Badge */}
