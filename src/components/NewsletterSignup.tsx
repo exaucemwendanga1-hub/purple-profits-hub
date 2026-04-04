@@ -10,7 +10,13 @@ const NewsletterSignup = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) return;
+    const trimmed = email.trim().toLowerCase();
+    if (!trimmed) return;
+    const emailRegex = /^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$/i;
+    if (!emailRegex.test(trimmed) || trimmed.length > 255) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
     setLoading(true);
 
     try {
