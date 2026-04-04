@@ -10,6 +10,7 @@ const PRODUCTS: Record<string, { name: string; storagePath: string }> = {
   "price_1TGvG8Pkl9P0JJ5q5S2l1ceZ": { name: "Earbud Supplier", storagePath: "earbud-supplier.pdf" },
   "price_1TGvH6Pkl9P0JJ5q4mg7eLmk": { name: "Cologne Supplier", storagePath: "cologne-supplier.pdf" },
   "price_1TGvIwPkl9P0JJ5qVtH9gE7c": { name: "Puffer Jacket Supplier", storagePath: "puffer-jacket-supplier.pdf" },
+  "price_1TIJ2oPkl9P0JJ5qfhrApxYP": { name: "CRM Supplier", storagePath: "crm-supplier.pdf" },
   "price_1TICsCPkl9P0JJ5qikR7BRdq": { name: "Lulu Supplier", storagePath: "lulu-supplier.pdf" },
 };
 

@@ -9,6 +9,7 @@ import productCologne from "@/assets/product-cologne.png";
 import productPuffer from "@/assets/product-puffer.png";
 import productJewelry from "@/assets/product-jewelry.png";
 import productLulu from "@/assets/product-lulu.png";
+import productCrm from "@/assets/product-crm.png";
 
 const products = [
   { name: "All Supplier Bundle", price: "$25.99 CAD", old: "$74.99 CAD", image: productJewelry, priceId: "price_1TG8uJPkl9P0JJ5qx0TQ3ccH", bestDeal: true, description: "Get access to all supplier lists in one bundle. Includes shoes, watches, earbuds, cologne, puffer jackets & more. Updated weekly." },
@@ -18,6 +19,7 @@ const products = [
   { name: "Cologne Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productCologne, priceId: "price_1TGvH6Pkl9P0JJ5q4mg7eLmk", description: "Authentic cologne and fragrance suppliers offering premium brands at unbeatable prices." },
   { name: "Puffer Jacket Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productPuffer, priceId: "price_1TGvIwPkl9P0JJ5qVtH9gE7c", description: "High-quality puffer jacket suppliers with trending styles and fast shipping." },
   { name: "Lulu Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productLulu, priceId: "price_1TICsCPkl9P0JJ5qikR7BRdq", description: "Premium athletic wear and activewear suppliers with Lululemon-style quality at wholesale prices." },
+  { name: "CRM Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productCrm, priceId: "price_1TIJ2oPkl9P0JJ5qfhrApxYP", description: "Premium CRM supplier list with verified quality and competitive pricing." },
 ];
 
 const ProductGrid = () => {
