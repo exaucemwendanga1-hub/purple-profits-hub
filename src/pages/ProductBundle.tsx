@@ -4,6 +4,7 @@ import { toast } from "sonner";
 import { Check, Shield, Zap, RefreshCw, ArrowLeft, Star, Package } from "lucide-react";
 import { Link } from "react-router-dom";
 import productJewelry from "@/assets/product-jewelry.png";
+import ReviewsGrid from "@/components/ReviewsGrid";
 
 const PRICE_ID = "price_1TG8uJPkl9P0JJ5qx0TQ3ccH";
 
@@ -181,6 +182,9 @@ const ProductBundle = () => {
           <p className="text-muted-foreground text-sm">— Verified Customer</p>
         </div>
       </section>
+
+      {/* Customer Reviews */}
+      <ReviewsGrid />
 
       {/* FAQ */}
       <section className="container mx-auto px-4 py-12 md:py-16">
