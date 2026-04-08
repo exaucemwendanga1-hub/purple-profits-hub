@@ -4,6 +4,7 @@ import { toast } from "sonner";
 import { Check, Shield, Zap, RefreshCw, ArrowLeft, Star, Package } from "lucide-react";
 import { Link } from "react-router-dom";
 import productJewelry from "@/assets/product-jewelry.png";
+import ReviewsGrid from "@/components/ReviewsGrid";
 
 const PRICE_ID = "price_1TG8uJPkl9P0JJ5qx0TQ3ccH";
 
