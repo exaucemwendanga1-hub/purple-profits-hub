@@ -16,6 +16,7 @@ import Auth from "./pages/Auth.tsx";
 import ResetPassword from "./pages/ResetPassword.tsx";
 import Account from "./pages/Account.tsx";
 import Admin from "./pages/Admin.tsx";
+import ProductBundle from "./pages/ProductBundle.tsx";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/bundle" element={<ProductBundle />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/account" element={<Account />} />
