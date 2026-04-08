@@ -183,6 +183,9 @@ const ProductBundle = () => {
         </div>
       </section>
 
+      {/* Customer Reviews */}
+      <ReviewsGrid />
+
       {/* FAQ */}
       <section className="container mx-auto px-4 py-12 md:py-16">
         <h2 className="font-heading text-3xl md:text-5xl text-center text-foreground mb-10">Frequently Asked Questions</h2>
