@@ -96,7 +96,7 @@ const ProductGrid = () => {
           <div
             key={p.name}
             className="relative group bg-card border border-foreground/30 rounded-2xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 hover:border-foreground/60 hover:glow-purple-sm cursor-pointer active:scale-[0.97] active:translate-y-0 w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.875rem)]"
-            onClick={() => handleBuy(p.priceId)}
+            onClick={() => p.bestDeal ? navigate("/bundle") : handleBuy(p.priceId)}
           >
             {/* Best Deal Badge */}
             {"bestDeal" in p && p.bestDeal && (
