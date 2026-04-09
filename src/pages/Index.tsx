@@ -9,7 +9,7 @@ import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import NewsletterSignup from "@/components/NewsletterSignup";
 import Footer from "@/components/Footer";
-import ChatWidget from "@/components/ChatWidget";
+
 
 const Index = () => (
   <div className="min-h-screen bg-background">
@@ -24,7 +24,7 @@ const Index = () => (
     <NewsletterSignup />
     <CTASection />
     <Footer />
-    <ChatWidget />
+    
   </div>
 );
 
