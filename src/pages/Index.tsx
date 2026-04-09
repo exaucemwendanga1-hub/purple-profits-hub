@@ -2,6 +2,7 @@ import TickerBanner from "@/components/TickerBanner";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import StatsRow from "@/components/StatsRow";
+import FeaturedCard from "@/components/FeaturedCard";
 import ProductGrid from "@/components/ProductGrid";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import ReviewsGrid from "@/components/ReviewsGrid";
@@ -17,6 +18,7 @@ const Index = () => (
     <Navbar />
     <HeroSection />
     <StatsRow />
+    <FeaturedCard />
     <ProductGrid />
     <FAQSection />
     <ReviewsGrid />
