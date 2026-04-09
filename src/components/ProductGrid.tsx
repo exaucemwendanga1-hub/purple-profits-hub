@@ -11,9 +11,10 @@ import productPuffer from "@/assets/product-puffer.png";
 import productJewelry from "@/assets/product-jewelry.png";
 import productLulu from "@/assets/product-lulu.png";
 import productCrm from "@/assets/product-crm.png";
+import productUltimateBundle from "@/assets/product-ultimate-bundle.png";
 
 const products = [
-  { name: "All Supplier Bundle", price: "​$29.99", old: "$74.99 CAD", image: productJewelry, slug: "/bundle", bestDeal: true },
+  { name: "Ultimate reselling Bundle", price: "​$29.99", old: "$74.99 CAD", image: productUltimateBundle, slug: "/bundle", bestDeal: true },
   { name: "Shoe Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productShoes, slug: "/product/shoes" },
   { name: "Luxury Watch Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productWatch, slug: "/product/watch" },
   { name: "Earbud Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productEarbuds, slug: "/product/earbuds" },
@@ -85,7 +86,7 @@ const ProductGrid = () => {
               <img
                 src={p.image}
                 alt={p.name}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300 mx-0 my-0 py-0"
                 loading="lazy"
               />
             </div>
