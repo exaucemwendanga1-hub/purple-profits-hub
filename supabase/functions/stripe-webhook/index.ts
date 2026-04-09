@@ -4,14 +4,14 @@ import { createClient } from "npm:@supabase/supabase-js@2";
 
 // Product priceId → file path + display name mapping
 const PRODUCTS: Record<string, { name: string; storagePath: string }> = {
-  "price_1TG8uJPkl9P0JJ5qx0TQ3ccH": { name: "All Supplier Bundle", storagePath: "all-supplier-bundle.pdf" },
-  "price_1TG96qPkl9P0JJ5qXGXtNrmk": { name: "Shoe Supplier", storagePath: "shoe-supplier.pdf" },
-  "price_1TGvFmPkl9P0JJ5qY6nfhFdm": { name: "Luxury Watch Supplier", storagePath: "luxury-watch-supplier.pdf" },
-  "price_1TGvG8Pkl9P0JJ5q5S2l1ceZ": { name: "Earbud Supplier", storagePath: "earbud-supplier.pdf" },
-  "price_1TGvH6Pkl9P0JJ5q4mg7eLmk": { name: "Cologne Supplier", storagePath: "cologne-supplier.pdf" },
-  "price_1TGvIwPkl9P0JJ5qVtH9gE7c": { name: "Puffer Jacket Supplier", storagePath: "puffer-jacket-supplier.pdf" },
-  "price_1TIJ2oPkl9P0JJ5qfhrApxYP": { name: "CRM Supplier", storagePath: "crm-supplier.pdf" },
-  "price_1TICsCPkl9P0JJ5qikR7BRdq": { name: "Lulu Supplier", storagePath: "lulu-supplier.pdf" },
+  "price_1TG8uJPkl9P0JJ5qx0TQ3ccH": { name: "All Supplier Bundle", storagePath: "Resell.pdf" },
+  "price_1TG96qPkl9P0JJ5qXGXtNrmk": { name: "Shoe Supplier", storagePath: "Shoe supplier.pdf" },
+  "price_1TGvFmPkl9P0JJ5qY6nfhFdm": { name: "Luxury Watch Supplier", storagePath: "Luxury watch.pdf" },
+  "price_1TGvG8Pkl9P0JJ5q5S2l1ceZ": { name: "Earbud Supplier", storagePath: "Copy of AirPods supplier.pdf" },
+  "price_1TGvH6Pkl9P0JJ5q4mg7eLmk": { name: "Cologne Supplier", storagePath: "Cologne.pdf" },
+  "price_1TGvIwPkl9P0JJ5qVtH9gE7c": { name: "Puffer Jacket Supplier", storagePath: "Designer jacket.pdf" },
+  "price_1TIJ2oPkl9P0JJ5qfhrApxYP": { name: "CRM Supplier", storagePath: "Chrome.pdf" },
+  "price_1TICsCPkl9P0JJ5qikR7BRdq": { name: "Lulu Supplier", storagePath: "activewear.pdf" },
 };
 
 serve(async (req) => {
