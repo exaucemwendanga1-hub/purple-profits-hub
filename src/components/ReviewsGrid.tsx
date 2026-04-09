@@ -18,7 +18,7 @@ const hardcodedReviews = [
   { name: "Lincoln B.", text: "Customer support is top notch and the suppliers deliver fast.", rating: 5 },
   { name: "Ethan G.", text: "Been reselling for 2 years and this is the best resource I've found.", rating: 5 },
   { name: "Owen K.", text: "The jewelry suppliers alone are worth 10x the price. Amazing!", rating: 5 },
-  { name: "Henry M.", text: "Quick delivery, verified suppliers, and great prices. What more could you want?", rating: 5 },
+  { name: "Evan S.", text: "Quick delivery, verified suppliers, and great prices. What more could you want?", rating: 5 },
 ];
 
 const StarRating = ({ rating }: { rating: number }) => (
