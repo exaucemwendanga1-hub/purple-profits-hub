@@ -13,7 +13,7 @@ import productLulu from "@/assets/product-lulu.png";
 import productCrm from "@/assets/product-crm.png";
 
 const products = [
-  { name: "All Supplier Bundle", price: "$25.99 CAD", old: "$74.99 CAD", image: productJewelry, slug: "/bundle", bestDeal: true },
+  { name: "All Supplier Bundle", price: "$29.99", old: "$74.99 CAD", image: productJewelry, slug: "/bundle", bestDeal: true },
   { name: "Shoe Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productShoes, slug: "/product/shoes" },
   { name: "Luxury Watch Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productWatch, slug: "/product/watch" },
   { name: "Earbud Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productEarbuds, slug: "/product/earbuds" },
