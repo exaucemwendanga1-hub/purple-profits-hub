@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const FeaturedCard = () => (
   <section className="container mx-auto px-4 py-16">
     <div className="relative bg-card border-2 border-primary/40 rounded-2xl p-8 md:p-12 max-w-3xl mx-auto glow-purple overflow-hidden">
@@ -15,12 +17,12 @@ const FeaturedCard = () => (
         Get access to ALL supplier lists in one bundle. The ultimate package for serious resellers looking to maximize profits.
       </p>
       <div className="flex gap-4 flex-wrap">
-        <button className="bg-primary hover:bg-primary-light text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-all glow-purple-sm hover:glow-purple">
+        <Link to="/bundle" className="bg-primary hover:bg-primary-light text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-all glow-purple-sm hover:glow-purple">
           Buy Now
-        </button>
-        <button className="border border-primary/50 text-primary-light hover:bg-primary/10 px-8 py-3 rounded-lg font-semibold transition-all">
+        </Link>
+        <Link to="/bundle" className="border border-primary/50 text-primary-light hover:bg-primary/10 px-8 py-3 rounded-lg font-semibold transition-all">
           Details +
-        </button>
+        </Link>
       </div>
     </div>
   </section>

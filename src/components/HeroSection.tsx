@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const HeroSection = () => {
   const scrollTo = () => document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
 
@@ -14,9 +16,14 @@ const HeroSection = () => {
         <p className="text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto mb-10">
           Premium supplier lists at unbeatable prices. Start your journey today with trusted, varified sources.
         </p>
-        <button onClick={scrollTo} className="bg-primary hover:bg-primary-light text-primary-foreground px-10 py-4 rounded-full font-semibold text-lg transition-all glow-neon hover:scale-105">
-          Start Now →
-        </button>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Link to="/bundle" className="bg-primary hover:bg-primary-light text-primary-foreground px-10 py-4 rounded-full font-semibold text-lg transition-all glow-neon hover:scale-105">
+            🔥 Get the All Supplier Bundle — $25.99
+          </Link>
+          <button onClick={scrollTo} className="border border-primary/50 text-primary-light hover:bg-primary/10 px-10 py-4 rounded-full font-semibold text-lg transition-all">
+            Browse Lists →
+          </button>
+        </div>
       </div>
     </section>
   );
