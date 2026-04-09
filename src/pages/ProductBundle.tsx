@@ -9,7 +9,7 @@ const ProductBundle = () => (
     oldPrice="$74.99 CAD"
     discount="65%"
     priceId="price_1TG8uJPkl9P0JJ5qx0TQ3ccH"
-    image={productJewelry}
+    image={productBundle}
     description="Get access to every supplier list we offer — shoes, watches, earbuds, cologne, puffer jackets & more. Updated weekly with new verified sources."
     features={[
       { icon: Package, title: "8 Supplier Lists in One", desc: "Shoes, watches, earbuds, cologne, puffer jackets, lulu, CRM & more." },
