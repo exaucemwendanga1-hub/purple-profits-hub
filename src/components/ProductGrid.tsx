@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
@@ -23,6 +24,7 @@ const products = [
 ];
 
 const ProductGrid = () => {
+  const navigate = useNavigate();
   const [loadingId, setLoadingId] = useState<string | null>(null);
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [couponCode, setCouponCode] = useState("");
@@ -94,7 +96,7 @@ const ProductGrid = () => {
           <div
             key={p.name}
             className="relative group bg-card border border-foreground/30 rounded-2xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 hover:border-foreground/60 hover:glow-purple-sm cursor-pointer active:scale-[0.97] active:translate-y-0 w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.875rem)]"
-            onClick={() => handleBuy(p.priceId)}
+            onClick={() => p.bestDeal ? navigate("/bundle") : handleBuy(p.priceId)}
           >
             {/* Best Deal Badge */}
             {"bestDeal" in p && p.bestDeal && (
@@ -145,8 +147,8 @@ const ProductGrid = () => {
                   {expandedId === p.priceId ? "Details −" : "Details +"}
                 </button>
                 <button
-                  onClick={(e) => { e.stopPropagation(); handleBuy(p.priceId); }}
-                  disabled={loadingId === p.priceId}
+                  onClick={(e) => { e.stopPropagation(); p.bestDeal ? navigate("/bundle") : handleBuy(p.priceId); }}
+                  disabled={loadingId === p.priceId && !p.bestDeal}
                   className="w-full bg-primary text-primary-foreground text-xs md:text-sm py-2 md:py-2.5 rounded-lg hover:bg-primary-light transition-colors font-heading tracking-wide uppercase disabled:opacity-50"
                 >
                   {loadingId === p.priceId ? "Loading..." : "Buy Now"}
