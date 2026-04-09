@@ -11,7 +11,7 @@ interface Review {
 }
 
 const hardcodedReviews = [
-  { name: "Jake S.", text: "Best supplier list I've ever bought. Made my money back in the first week!", rating: 5 },
+  { name: "Junior F.", text: "Best supplier list I've ever bought. Made my money back in the first week!", rating: 5 },
   { name: "Alex A.", text: "Instant access and amazing quality. The shoe suppliers are incredible.", rating: 5 },
   { name: "Ryan R.", text: "I was skeptical at first but these suppliers are legit. Highly recommend!", rating: 5 },
   { name: "Noah N.", text: "Great value for money. The ultimate pack is a no-brainer at this price.", rating: 5 },
