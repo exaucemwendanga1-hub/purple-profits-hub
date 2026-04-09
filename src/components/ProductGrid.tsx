@@ -147,8 +147,8 @@ const ProductGrid = () => {
                   {expandedId === p.priceId ? "Details −" : "Details +"}
                 </button>
                 <button
-                  onClick={(e) => { e.stopPropagation(); handleBuy(p.priceId); }}
-                  disabled={loadingId === p.priceId}
+                  onClick={(e) => { e.stopPropagation(); p.bestDeal ? navigate("/bundle") : handleBuy(p.priceId); }}
+                  disabled={loadingId === p.priceId && !p.bestDeal}
                   className="w-full bg-primary text-primary-foreground text-xs md:text-sm py-2 md:py-2.5 rounded-lg hover:bg-primary-light transition-colors font-heading tracking-wide uppercase disabled:opacity-50"
                 >
                   {loadingId === p.priceId ? "Loading..." : "Buy Now"}
