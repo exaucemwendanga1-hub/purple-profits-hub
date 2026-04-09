@@ -24,6 +24,7 @@ const products = [
 ];
 
 const ProductGrid = () => {
+  const navigate = useNavigate();
   const [loadingId, setLoadingId] = useState<string | null>(null);
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const [couponCode, setCouponCode] = useState("");
