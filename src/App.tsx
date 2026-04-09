@@ -17,6 +17,13 @@ import ResetPassword from "./pages/ResetPassword.tsx";
 import Account from "./pages/Account.tsx";
 import Admin from "./pages/Admin.tsx";
 import ProductBundle from "./pages/ProductBundle.tsx";
+import ProductShoes from "./pages/ProductShoes.tsx";
+import ProductWatch from "./pages/ProductWatch.tsx";
+import ProductEarbuds from "./pages/ProductEarbuds.tsx";
+import ProductCologne from "./pages/ProductCologne.tsx";
+import ProductPuffer from "./pages/ProductPuffer.tsx";
+import ProductLulu from "./pages/ProductLulu.tsx";
+import ProductCrm from "./pages/ProductCrm.tsx";
 
 const queryClient = new QueryClient();
 
@@ -30,6 +37,13 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/bundle" element={<ProductBundle />} />
+            <Route path="/product/shoes" element={<ProductShoes />} />
+            <Route path="/product/watch" element={<ProductWatch />} />
+            <Route path="/product/earbuds" element={<ProductEarbuds />} />
+            <Route path="/product/cologne" element={<ProductCologne />} />
+            <Route path="/product/puffer" element={<ProductPuffer />} />
+            <Route path="/product/lulu" element={<ProductLulu />} />
+            <Route path="/product/crm" element={<ProductCrm />} />
             <Route path="/auth" element={<Auth />} />
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/account" element={<Account />} />
