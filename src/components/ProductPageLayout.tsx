@@ -43,7 +43,7 @@ const ProductPageLayout = ({
       const { data, error } = await supabase.functions.invoke("create-payment", { body });
       if (error) throw error;
       if (data?.error) { toast.error(data.error); return; }
-      if (data?.url) window.open(data.url, "_blank");
+      if (data?.url) window.location.href = data.url;
     } catch {
       toast.error("Failed to start checkout. Please try again.");
     } finally {
