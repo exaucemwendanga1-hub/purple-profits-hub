@@ -15,7 +15,7 @@ const hardcodedReviews = [
   { name: "Alex A.", text: "Instant access and amazing quality. The shoe suppliers are incredible.", rating: 5 },
   { name: "Ryan R.", text: "I was skeptical at first but these suppliers are legit. Highly recommend!", rating: 5 },
   { name: "Noah N.", text: "Great value for money. The ultimate pack is a no-brainer at this price.", rating: 5 },
-  { name: "Liam L.", text: "Customer support is top notch and the suppliers deliver fast.", rating: 5 },
+  { name: "Lincoln B.", text: "Customer support is top notch and the suppliers deliver fast.", rating: 5 },
   { name: "Ethan G.", text: "Been reselling for 2 years and this is the best resource I've found.", rating: 5 },
   { name: "Owen K.", text: "The jewelry suppliers alone are worth 10x the price. Amazing!", rating: 5 },
   { name: "Henry M.", text: "Quick delivery, verified suppliers, and great prices. What more could you want?", rating: 5 },
