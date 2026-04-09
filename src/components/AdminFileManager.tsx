@@ -15,14 +15,14 @@ interface StorageFile {
 }
 
 const EXPECTED_FILES = [
-  "all-supplier-bundle.pdf",
-  "shoe-supplier.pdf",
-  "luxury-watch-supplier.pdf",
-  "earbud-supplier.pdf",
-  "cologne-supplier.pdf",
-  "puffer-jacket-supplier.pdf",
-  "lulu-supplier.pdf",
-  "crm-supplier.pdf",
+  "Resell.pdf",
+  "Shoe supplier.pdf",
+  "Luxury watch.pdf",
+  "Copy of AirPods supplier.pdf",
+  "Cologne.pdf",
+  "Designer jacket.pdf",
+  "activewear.pdf",
+  "Chrome.pdf",
 ];
 
 export const AdminFileManager = () => {
