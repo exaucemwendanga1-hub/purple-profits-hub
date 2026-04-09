@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import productBundle from "@/assets/product-bundle.png";
 
 const FeaturedCard = () => (
   <section className="container mx-auto px-4 py-16">
@@ -7,22 +8,29 @@ const FeaturedCard = () => (
         <span className="bg-sale text-primary-foreground text-xs font-bold px-3 py-1 rounded-full">SALE</span>
         <span className="bg-gold text-background text-xs font-bold px-3 py-1 rounded-full">⭐ BEST DEAL</span>
       </div>
-      <h2 className="font-heading text-4xl md:text-5xl text-foreground mb-2">Ultimate Resellers Pack ⭐</h2>
-      <div className="flex items-baseline gap-3 mb-4">
-        <span className="text-3xl font-bold text-primary-light">$29.99 CAD</span>
-        <span className="text-muted-foreground line-through text-lg">$74.99 CAD</span>
-        <span className="bg-primary/20 text-primary-light text-sm font-semibold px-3 py-1 rounded-full">Save 65%</span>
-      </div>
-      <p className="text-muted-foreground mb-8 max-w-lg">
-        Get access to ALL supplier lists in one bundle. The ultimate package for serious resellers looking to maximize profits.
-      </p>
-      <div className="flex gap-4 flex-wrap">
-        <Link to="/bundle" className="bg-primary hover:bg-primary-light text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-all glow-purple-sm hover:glow-purple">
-          Buy Now
-        </Link>
-        <Link to="/bundle" className="border border-primary/50 text-primary-light hover:bg-primary/10 px-8 py-3 rounded-lg font-semibold transition-all">
-          Details +
-        </Link>
+      <div className="flex flex-col md:flex-row gap-8 items-center">
+        <div className="flex-shrink-0">
+          <img src={productBundle} alt="Ultimate Reselling Bundle" className="w-48 h-48 md:w-56 md:h-56 object-cover rounded-xl" />
+        </div>
+        <div>
+          <h2 className="font-heading text-4xl md:text-5xl text-foreground mb-2">Ultimate Resellers Pack ⭐</h2>
+          <div className="flex items-baseline gap-3 mb-4">
+            <span className="text-3xl font-bold text-primary-light">$29.99 CAD</span>
+            <span className="text-muted-foreground line-through text-lg">$74.99 CAD</span>
+            <span className="bg-primary/20 text-primary-light text-sm font-semibold px-3 py-1 rounded-full">Save 65%</span>
+          </div>
+          <p className="text-muted-foreground mb-8 max-w-lg">
+            Get access to ALL supplier lists in one bundle. The ultimate package for serious resellers looking to maximize profits.
+          </p>
+          <div className="flex gap-4 flex-wrap">
+            <Link to="/bundle" className="bg-primary hover:bg-primary-light text-primary-foreground px-8 py-3 rounded-lg font-semibold transition-all glow-purple-sm hover:glow-purple">
+              Buy Now
+            </Link>
+            <Link to="/bundle" className="border border-primary/50 text-primary-light hover:bg-primary/10 px-8 py-3 rounded-lg font-semibold transition-all">
+              Details +
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   </section>
