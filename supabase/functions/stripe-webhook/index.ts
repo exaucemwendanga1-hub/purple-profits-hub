@@ -11,7 +11,7 @@ const PRODUCTS: Record<string, { name: string; storagePath: string }> = {
   "price_1TGvH6Pkl9P0JJ5q4mg7eLmk": { name: "Cologne Supplier", storagePath: "Cologne.pdf" },
   "price_1TGvIwPkl9P0JJ5qVtH9gE7c": { name: "Puffer Jacket Supplier", storagePath: "Designer jacket.pdf" },
   "price_1TIJ2oPkl9P0JJ5qfhrApxYP": { name: "CRM Supplier", storagePath: "Chrome.pdf" },
-  "price_1TICsCPkl9P0JJ5qikR7BRdq": { name: "Lulu Supplier", storagePath: "activewear.pdf" },
+  "price_1TICsCPkl9P0JJ5qikR7BRdq": { name: "Lulu Supplier", storagePath: " activewear.pdf" },
 };
 
 serve(async (req) => {

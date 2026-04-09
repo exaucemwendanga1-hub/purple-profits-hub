@@ -106,8 +106,8 @@ export const AdminFileManager = () => {
     return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
   };
 
-  const uploadedNames = new Set(files.map((f) => f.name));
-  const missingFiles = EXPECTED_FILES.filter((f) => !uploadedNames.has(f));
+  const uploadedNames = new Set(files.map((f) => f.name.trim()));
+  const missingFiles = EXPECTED_FILES.filter((f) => !uploadedNames.has(f.trim()));
 
   return (
     <Card>
