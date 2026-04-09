@@ -133,20 +133,6 @@ const ProductPageLayout = ({
         </div>
       </section>
 
-      {/* What's Included */}
-      {includes.length > 0 && (
-        <section className="container mx-auto px-4 py-12 md:py-16">
-          <h2 className="font-heading text-3xl md:text-5xl text-center text-foreground mb-10">What's Included</h2>
-          <div className="max-w-2xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {includes.map((item) => (
-              <div key={item} className="flex items-center gap-3 bg-card border border-foreground/10 rounded-xl px-5 py-4">
-                <Check className="w-5 h-5 text-primary shrink-0" />
-                <span className="text-foreground text-sm font-medium">{item}</span>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
 
       {/* Features */}
       <section className="container mx-auto px-4 py-12 md:py-16">
