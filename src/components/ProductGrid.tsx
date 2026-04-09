@@ -13,48 +13,20 @@ import productLulu from "@/assets/product-lulu.png";
 import productCrm from "@/assets/product-crm.png";
 
 const products = [
-  { name: "All Supplier Bundle", price: "$25.99 CAD", old: "$74.99 CAD", image: productJewelry, priceId: "price_1TG8uJPkl9P0JJ5qx0TQ3ccH", bestDeal: true, description: "Get access to all supplier lists in one bundle. Includes shoes, watches, earbuds, cologne, puffer jackets & more. Updated weekly." },
-  { name: "Shoe Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productShoes, priceId: "price_1TG96qPkl9P0JJ5qXGXtNrmk", description: "Premium shoe suppliers for trending sneakers and designer footwear at wholesale prices." },
-  { name: "Luxury Watch Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productWatch, priceId: "price_1TGvFmPkl9P0JJ5qY6nfhFdm", description: "Trusted luxury watch suppliers with verified quality and competitive pricing." },
-  { name: "Earbud Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productEarbuds, priceId: "price_1TGvG8Pkl9P0JJ5q5S2l1ceZ", description: "Top-rated earbud and headphone suppliers with the latest models at wholesale." },
-  { name: "Cologne Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productCologne, priceId: "price_1TGvH6Pkl9P0JJ5q4mg7eLmk", description: "Authentic cologne and fragrance suppliers offering premium brands at unbeatable prices." },
-  { name: "Puffer Jacket Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productPuffer, priceId: "price_1TGvIwPkl9P0JJ5qVtH9gE7c", description: "High-quality puffer jacket suppliers with trending styles and fast shipping." },
-  { name: "Lulu Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productLulu, priceId: "price_1TICsCPkl9P0JJ5qikR7BRdq", description: "Premium athletic wear and activewear suppliers with Lululemon-style quality at wholesale prices." },
-  { name: "CRM Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productCrm, priceId: "price_1TIJ2oPkl9P0JJ5qfhrApxYP", description: "Premium CRM supplier list with verified quality and competitive pricing." },
+  { name: "All Supplier Bundle", price: "$25.99 CAD", old: "$74.99 CAD", image: productJewelry, slug: "/bundle", bestDeal: true },
+  { name: "Shoe Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productShoes, slug: "/product/shoes" },
+  { name: "Luxury Watch Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productWatch, slug: "/product/watch" },
+  { name: "Earbud Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productEarbuds, slug: "/product/earbuds" },
+  { name: "Cologne Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productCologne, slug: "/product/cologne" },
+  { name: "Puffer Jacket Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productPuffer, slug: "/product/puffer" },
+  { name: "Lulu Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productLulu, slug: "/product/lulu" },
+  { name: "CRM Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productCrm, slug: "/product/crm" },
 ];
 
 const ProductGrid = () => {
   const navigate = useNavigate();
-  const [loadingId, setLoadingId] = useState<string | null>(null);
-  const [expandedId, setExpandedId] = useState<string | null>(null);
   const [couponCode, setCouponCode] = useState("");
   const [couponApplied, setCouponApplied] = useState(false);
-
-  const handleBuy = async (priceId: string) => {
-    setLoadingId(priceId);
-    try {
-      const body: any = { priceId };
-      if (couponCode.trim()) {
-        body.couponCode = couponCode.trim();
-      }
-
-      const { data, error } = await supabase.functions.invoke("create-payment", {
-        body,
-      });
-      if (error) throw error;
-      if (data?.error) {
-        toast.error(data.error);
-        return;
-      }
-      if (data?.url) {
-        window.open(data.url, "_blank");
-      }
-    } catch (err: any) {
-      toast.error("Failed to start checkout. Please try again.");
-    } finally {
-      setLoadingId(null);
-    }
-  };
 
   return (
     <section id="products" className="container mx-auto px-4 py-16">
@@ -96,10 +68,10 @@ const ProductGrid = () => {
           <div
             key={p.name}
             className="relative group bg-card border border-foreground/30 rounded-2xl overflow-hidden flex flex-col transition-all hover:-translate-y-1 hover:border-foreground/60 hover:glow-purple-sm cursor-pointer active:scale-[0.97] active:translate-y-0 w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.875rem)]"
-            onClick={() => p.bestDeal ? navigate("/bundle") : handleBuy(p.priceId)}
+            onClick={() => navigate(p.slug)}
           >
             {/* Best Deal Badge */}
-            {"bestDeal" in p && p.bestDeal && (
+            {p.bestDeal && (
               <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20 bg-muted-foreground text-background text-[10px] md:text-xs font-bold px-3 py-1 rounded-b-lg tracking-wide">
                 BEST DEAL
               </div>
@@ -124,36 +96,15 @@ const ProductGrid = () => {
                 {p.name}
               </h3>
 
-              {/* Expandable Details */}
-              <div
-                className={`overflow-hidden transition-all duration-300 w-full ${
-                  expandedId === p.priceId ? "max-h-40 opacity-100 mb-3" : "max-h-0 opacity-0"
-                }`}
-              >
-                <p className="text-muted-foreground text-xs md:text-sm leading-relaxed">
-                  {p.description}
-                </p>
-              </div>
-
               <div className="flex items-baseline gap-2 mb-3 md:mb-4">
                 <span className="text-muted-foreground line-through text-xs md:text-sm">{p.old}</span>
                 <span className="text-lg md:text-2xl font-bold text-foreground">{p.price}</span>
               </div>
-              <div className="flex flex-col gap-2 w-full mt-auto">
-                <button
-                  onClick={(e) => { e.stopPropagation(); setExpandedId(expandedId === p.priceId ? null : p.priceId); }}
-                  className="w-full border border-foreground/30 text-foreground text-xs md:text-sm py-2 md:py-2.5 rounded-lg hover:bg-primary/10 transition-colors font-heading tracking-wide uppercase"
-                >
-                  {expandedId === p.priceId ? "Details −" : "Details +"}
-                </button>
-                <button
-                  onClick={(e) => { e.stopPropagation(); p.bestDeal ? navigate("/bundle") : handleBuy(p.priceId); }}
-                  disabled={loadingId === p.priceId && !p.bestDeal}
-                  className="w-full bg-primary text-primary-foreground text-xs md:text-sm py-2 md:py-2.5 rounded-lg hover:bg-primary-light transition-colors font-heading tracking-wide uppercase disabled:opacity-50"
-                >
-                  {loadingId === p.priceId ? "Loading..." : "Buy Now"}
-                </button>
-              </div>
+              <button
+                className="w-full bg-primary text-primary-foreground text-xs md:text-sm py-2 md:py-2.5 rounded-lg hover:bg-primary-light transition-colors font-heading tracking-wide uppercase mt-auto"
+              >
+                View Product
+              </button>
             </div>
           </div>
         ))}
