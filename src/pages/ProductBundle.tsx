@@ -1,5 +1,5 @@
 import { Package, Shield, Zap, RefreshCw } from "lucide-react";
-import productJewelry from "@/assets/product-jewelry.png";
+import productBundle from "@/assets/product-bundle.png";
 import ProductPageLayout from "@/components/ProductPageLayout";
 
 const ProductBundle = () => (
