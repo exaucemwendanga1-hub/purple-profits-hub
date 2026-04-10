@@ -14,7 +14,7 @@ import productCrm from "@/assets/product-crm.png";
 import productUltimateBundle from "@/assets/product-ultimate-bundle.png";
 
 const products = [
-  { name: "Ultimate reselling Bundle", price: "​$29.99", old: "$74.99 CAD", image: productUltimateBundle, slug: "/bundle", bestDeal: true },
+  { name: "Ultimate reselling Bundle", price: "​$24.99", old: "$74.99 CAD", image: productUltimateBundle, slug: "/bundle", bestDeal: true },
   { name: "Shoe Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productShoes, slug: "/product/shoes" },
   { name: "Luxury Watch Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productWatch, slug: "/product/watch" },
   { name: "Earbud Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productEarbuds, slug: "/product/earbuds" },
