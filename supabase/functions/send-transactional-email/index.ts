@@ -77,18 +77,7 @@ Deno.serve(async (req) => {
     }
   }
 
-  const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')
-
-  if (!supabaseServiceKey) {
-    console.error('Missing SUPABASE_SERVICE_ROLE_KEY')
-    return new Response(
-      JSON.stringify({ error: 'Server configuration error' }),
-      {
-        status: 500,
-        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-      }
-    )
-  }
+  const supabaseServiceKey = serviceRoleKey
 
   // Parse request body
   let templateName: string
