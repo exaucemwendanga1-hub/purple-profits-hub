@@ -108,30 +108,43 @@ serve(async (req) => {
         continue;
       }
 
-      // Send order confirmation email
-      await supabase.functions.invoke("send-transactional-email", {
-        body: {
-          templateName: "order-confirmation",
-          recipientEmail: customerEmail,
-          idempotencyKey: `order-confirm-${session.id}-${priceId}`,
-          templateData: {
-            productName: product.name,
-            amount: `$${((item.amount_total || 0) / 100).toFixed(2)}`,
-            customerEmail,
+      // Helper: call send-transactional-email with explicit service-role auth
+      const sendEmail = async (body: Record<string, unknown>) => {
+        const resp = await fetch(`${supabaseUrl}/functions/v1/send-transactional-email`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${supabaseServiceKey}`,
+            "apikey": supabaseServiceKey,
           },
+          body: JSON.stringify(body),
+        });
+        if (!resp.ok) {
+          const errText = await resp.text();
+          console.error("send-transactional-email failed:", resp.status, errText);
+        }
+      };
+
+      // Send order confirmation email
+      await sendEmail({
+        templateName: "order-confirmation",
+        recipientEmail: customerEmail,
+        idempotencyKey: `order-confirm-${session.id}-${priceId}`,
+        templateData: {
+          productName: product.name,
+          amount: `$${((item.amount_total || 0) / 100).toFixed(2)}`,
+          customerEmail,
         },
       });
 
       // Send product delivery email
-      await supabase.functions.invoke("send-transactional-email", {
-        body: {
-          templateName: "product-delivery",
-          recipientEmail: customerEmail,
-          idempotencyKey: `product-delivery-${session.id}-${priceId}`,
-          templateData: {
-            productName: product.name,
-            downloadUrl: signedUrlData.signedUrl,
-          },
+      await sendEmail({
+        templateName: "product-delivery",
+        recipientEmail: customerEmail,
+        idempotencyKey: `product-delivery-${session.id}-${priceId}`,
+        templateData: {
+          productName: product.name,
+          downloadUrl: signedUrlData.signedUrl,
         },
       });
 
