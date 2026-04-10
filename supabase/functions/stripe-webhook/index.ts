@@ -109,13 +109,14 @@ serve(async (req) => {
       }
 
       // Helper: call send-transactional-email with explicit service-role auth
+      const supabaseAnonKey = Deno.env.get("SUPABASE_ANON_KEY") || "";
       const sendEmail = async (body: Record<string, unknown>) => {
         const resp = await fetch(`${supabaseUrl}/functions/v1/send-transactional-email`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
             "Authorization": `Bearer ${supabaseServiceKey}`,
-            "apikey": supabaseServiceKey,
+            "apikey": supabaseAnonKey,
           },
           body: JSON.stringify(body),
         });
