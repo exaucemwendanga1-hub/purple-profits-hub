@@ -5,7 +5,7 @@ import ProductPageLayout from "@/components/ProductPageLayout";
 const ProductBundle = () => (
   <ProductPageLayout
     name="All Supplier Bundle"
-    price="$29.99"
+    price="$24.99"
     oldPrice="$74.99 CAD"
     discount="65%"
     priceId="price_1TG8uJPkl9P0JJ5qx0TQ3ccH"
