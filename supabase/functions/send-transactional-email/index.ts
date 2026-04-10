@@ -39,7 +39,7 @@ Deno.serve(async (req) => {
     return new Response(null, { headers: corsHeaders })
   }
 
-  // Authenticate: require a valid JWT (user or service_role)
+  // Authenticate: require either the service role key or a valid user JWT
   const authHeader = req.headers.get('Authorization')
   if (!authHeader?.startsWith('Bearer ')) {
     return new Response(JSON.stringify({ error: 'Unauthorized' }), {
@@ -48,25 +48,33 @@ Deno.serve(async (req) => {
     })
   }
 
+  const bearerToken = authHeader.replace('Bearer ', '')
+  const serviceRoleKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')
   const supabaseUrl = Deno.env.get('SUPABASE_URL')
   const supabaseAnonKey = Deno.env.get('SUPABASE_ANON_KEY')
-  if (!supabaseUrl || !supabaseAnonKey) {
+
+  if (!supabaseUrl || !supabaseAnonKey || !serviceRoleKey) {
     return new Response(JSON.stringify({ error: 'Server configuration error' }), {
       status: 500,
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     })
   }
 
-  const authClient = createClient(supabaseUrl, supabaseAnonKey, {
-    global: { headers: { Authorization: authHeader } },
-  })
-  const token = authHeader.replace('Bearer ', '')
-  const { data: claimsData, error: claimsError } = await authClient.auth.getClaims(token)
-  if (claimsError || !claimsData?.claims) {
-    return new Response(JSON.stringify({ error: 'Unauthorized' }), {
-      status: 401,
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+  // Allow service role key directly (for server-to-server calls)
+  const isServiceRole = bearerToken === serviceRoleKey
+
+  if (!isServiceRole) {
+    // Validate as user JWT
+    const authClient = createClient(supabaseUrl, supabaseAnonKey, {
+      global: { headers: { Authorization: authHeader } },
     })
+    const { data: claimsData, error: claimsError } = await authClient.auth.getClaims(bearerToken)
+    if (claimsError || !claimsData?.claims) {
+      return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+        status: 401,
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+      })
+    }
   }
 
   const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')
