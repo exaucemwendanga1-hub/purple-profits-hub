@@ -4,8 +4,8 @@ import { createClient } from "npm:@supabase/supabase-js@2";
 
 // Product priceId → file path + display name mapping
 const PRODUCTS: Record<string, { name: string; storagePath: string }> = {
+  // Old account price IDs
   "price_1TG8uJPkl9P0JJ5qx0TQ3ccH": { name: "All Supplier Bundle", storagePath: "Resell.pdf" },
-  "price_1TIJnKB69r5Oj3X7aER6v3Nv": { name: "All Supplier Bundle", storagePath: "Resell.pdf" },
   "price_1TG96qPkl9P0JJ5qXGXtNrmk": { name: "Shoe Supplier", storagePath: "Shoe supplier.pdf" },
   "price_1TGvFmPkl9P0JJ5qY6nfhFdm": { name: "Luxury Watch Supplier", storagePath: "Luxury watch.pdf" },
   "price_1TGvG8Pkl9P0JJ5q5S2l1ceZ": { name: "Earbud Supplier", storagePath: "Copy of AirPods supplier.pdf" },
@@ -13,6 +13,16 @@ const PRODUCTS: Record<string, { name: string; storagePath: string }> = {
   "price_1TGvIwPkl9P0JJ5qVtH9gE7c": { name: "Puffer Jacket Supplier", storagePath: "Designer jacket.pdf" },
   "price_1TIJ2oPkl9P0JJ5qfhrApxYP": { name: "CRM Supplier", storagePath: "Chrome.pdf" },
   "price_1TICsCPkl9P0JJ5qikR7BRdq": { name: "Lulu Supplier", storagePath: "activewear.pdf" },
+  // New account price IDs
+  "price_1TIJhKB69r5Oj3X78nbBHGrt": { name: "All Supplier Bundle", storagePath: "Resell.pdf" },
+  "price_1TIJfYB69r5Oj3X7jxdPNj1R": { name: "All Supplier Bundle", storagePath: "Resell.pdf" },
+  "price_1TIJnKB69r5Oj3X7aER6v3Nv": { name: "Shoe Supplier", storagePath: "Shoe supplier.pdf" },
+  "price_1TLXsoB69r5Oj3X7TFBvlFxA": { name: "Luxury Watch Supplier", storagePath: "Luxury watch.pdf" },
+  "price_1TLauTB69r5Oj3X7i0Yh1K0L": { name: "Earbud Supplier", storagePath: "Copy of AirPods supplier.pdf" },
+  "price_1TLawPB69r5Oj3X75dch1EMg": { name: "Cologne Supplier", storagePath: "Cologne.pdf" },
+  "price_1TLaxpB69r5Oj3X7DBYK69Z9": { name: "Puffer Jacket Supplier", storagePath: "Designer jacket.pdf" },
+  "price_1TLazWB69r5Oj3X7nBCVD79M": { name: "Lulu Supplier", storagePath: "activewear.pdf" },
+  "price_1TLb0jB69r5Oj3X76tKsMKgX": { name: "CRM Supplier", storagePath: "Chrome.pdf" },
 };
 
 serve(async (req) => {
