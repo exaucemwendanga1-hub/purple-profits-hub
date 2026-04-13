@@ -8,7 +8,7 @@ const ProductBundle = () => (
     price="$24.99"
     oldPrice="$74.99 CAD"
     discount="65%"
-    priceId="price_1TG8uJPkl9P0JJ5qx0TQ3ccH"
+    paymentLink="https://buy.stripe.com/7sYaEWafm6Hygaweo48Ra05"
     image={productBundle}
     description="Get access to every supplier list we offer — shoes, watches, earbuds, cologne, puffer jackets & more. Updated weekly with new verified sources."
     features={[

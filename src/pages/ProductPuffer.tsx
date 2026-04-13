@@ -8,7 +8,7 @@ const ProductPuffer = () => (
     price="$11.99"
     oldPrice="$19.99 CAD"
     discount="40%"
-    priceId="price_1TGvIwPkl9P0JJ5qVtH9gE7c"
+    paymentLink="https://buy.stripe.com/00w9ASgDKd5W5vS5Ry8Ra08"
     image={productPuffer}
     description="High-quality puffer jacket suppliers with trending styles and fast shipping. Source the hottest winter outerwear at wholesale prices."
     features={[

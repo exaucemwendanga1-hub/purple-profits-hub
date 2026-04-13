@@ -8,7 +8,7 @@ const ProductCrm = () => (
     price="$11.99"
     oldPrice="$19.99 CAD"
     discount="40%"
-    priceId="price_1TIJ2oPkl9P0JJ5qfhrApxYP"
+    paymentLink="https://buy.stripe.com/8x2bJ00EM5Du8I4a7O8Ra03"
     image={productCrm}
     description="Premium CRM supplier list with verified quality and competitive pricing. Streamline your reselling operations with the best tools and contacts."
     features={[

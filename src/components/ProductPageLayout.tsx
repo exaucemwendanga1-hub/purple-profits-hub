@@ -1,7 +1,5 @@
 import { useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
-import { toast } from "sonner";
-import { Check, Shield, Zap, RefreshCw, ArrowLeft, Star } from "lucide-react";
+import { Shield, Zap, RefreshCw, ArrowLeft, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import ReviewsGrid from "@/components/ReviewsGrid";
 
@@ -10,7 +8,7 @@ export interface ProductPageProps {
   price: string;
   oldPrice: string;
   discount: string;
-  priceId: string;
+  paymentLink: string;
   image: string;
   description: string;
   features: { icon: React.ElementType; title: string; desc: string }[];
@@ -23,32 +21,17 @@ const ProductPageLayout = ({
   price,
   oldPrice,
   discount,
-  priceId,
+  paymentLink,
   image,
   description,
   features,
   includes,
   faqs,
 }: ProductPageProps) => {
-  const [loading, setLoading] = useState(false);
-  const [coupon, setCoupon] = useState("");
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
-  const handleBuy = async () => {
-    setLoading(true);
-    try {
-      const body: any = { priceId };
-      if (coupon.trim()) body.couponCode = coupon.trim();
-
-      const { data, error } = await supabase.functions.invoke("create-payment", { body });
-      if (error) throw error;
-      if (data?.error) { toast.error(data.error); return; }
-      if (data?.url) window.location.href = data.url;
-    } catch {
-      toast.error("Failed to start checkout. Please try again.");
-    } finally {
-      setLoading(false);
-    }
+  const handleBuy = () => {
+    window.location.href = paymentLink;
   };
 
   return (
@@ -96,23 +79,6 @@ const ProductPageLayout = ({
               <span className="text-muted-foreground line-through text-lg">{oldPrice}</span>
               <span className="text-4xl md:text-5xl font-bold text-foreground">{price}</span>
               <span className="text-muted-foreground text-lg">CAD</span>
-            </div>
-
-            {/* Coupon */}
-            <div className="flex gap-2 mb-4">
-              <input
-                type="text"
-                placeholder="Coupon code"
-                value={coupon}
-                onChange={(e) => setCoupon(e.target.value.toUpperCase())}
-                className="flex-1 bg-card border border-foreground/30 rounded-xl px-4 py-2.5 text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-colors"
-              />
-              <button
-                onClick={() => { if (coupon.trim()) toast.success("Coupon will be applied at checkout!"); }}
-                className="bg-secondary text-foreground px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-secondary/80 transition-colors"
-              >
-                Apply
-              </button>
             </div>
 
             {/* CTA */}

@@ -8,7 +8,7 @@ const ProductShoes = () => (
     price="$11.99"
     oldPrice="$19.99 CAD"
     discount="40%"
-    priceId="price_1TG96qPkl9P0JJ5qXGXtNrmk"
+    paymentLink="https://buy.stripe.com/7sY00i87ec1SbUg4Nu8Ra00"
     image={productShoes}
     description="Premium shoe suppliers for trending sneakers and designer footwear at wholesale prices. Get access to verified sources for the hottest kicks on the market."
     features={[

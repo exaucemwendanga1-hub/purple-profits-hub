@@ -8,7 +8,7 @@ const ProductEarbuds = () => (
     price="$11.99"
     oldPrice="$19.99 CAD"
     discount="40%"
-    priceId="price_1TGvG8Pkl9P0JJ5q5S2l1ceZ"
+    paymentLink="https://buy.stripe.com/eVq6oG73a2ricYk5Ry8Ra06"
     image={productEarbuds}
     description="Top-rated earbud and headphone suppliers with the latest models at wholesale. Source trending audio products for your reselling business."
     features={[

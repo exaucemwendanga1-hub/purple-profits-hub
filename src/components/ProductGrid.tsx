@@ -1,7 +1,4 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
-import { toast } from "sonner";
 
 import productShoes from "@/assets/product-shoes.png";
 import productWatch from "@/assets/product-watch.png";
@@ -26,43 +23,10 @@ const products = [
 
 const ProductGrid = () => {
   const navigate = useNavigate();
-  const [couponCode, setCouponCode] = useState("");
-  const [couponApplied, setCouponApplied] = useState(false);
 
   return (
     <section id="products" className="container mx-auto px-4 py-16">
       <h2 className="font-heading text-4xl md:text-5xl text-center text-foreground mb-8">All Products</h2>
-
-      {/* Coupon Code Input */}
-      <div className="max-w-md mx-auto mb-10">
-        <div className="flex gap-2">
-          <input
-            type="text"
-            placeholder="Enter coupon code"
-            value={couponCode}
-            onChange={(e) => {
-              setCouponCode(e.target.value.toUpperCase());
-              setCouponApplied(false);
-            }}
-            className="flex-1 bg-card border border-foreground/30 rounded-xl px-4 py-2.5 text-foreground text-sm placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 transition-colors"
-          />
-          <button
-            onClick={() => {
-              if (couponCode.trim()) {
-                setCouponApplied(true);
-                toast.success("Coupon will be applied at checkout!");
-              }
-            }}
-            className="bg-primary text-primary-foreground px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-primary-light transition-colors"
-          >
-            Apply
-          </button>
-        </div>
-        {couponApplied && (
-          <p className="text-sm text-primary-light mt-2">✓ Coupon "{couponCode}" will be applied at checkout</p>
-        )}
-        <p className="text-muted-foreground text-xs mt-1">You can also enter coupon codes directly on the checkout page</p>
-      </div>
 
       <div className="flex flex-wrap justify-center gap-4 md:gap-5 max-w-4xl mx-auto">
         {products.map((p) => (

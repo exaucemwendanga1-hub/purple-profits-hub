@@ -8,7 +8,7 @@ const ProductWatch = () => (
     price="$11.99"
     oldPrice="$19.99 CAD"
     discount="40%"
-    priceId="price_1TGvFmPkl9P0JJ5qY6nfhFdm"
+    paymentLink="https://buy.stripe.com/3cI7sKfzG7LC8I47ZG8Ra02"
     image={productWatch}
     description="Trusted luxury watch suppliers with verified quality and competitive pricing. Source premium timepieces at wholesale for maximum profit margins."
     features={[
