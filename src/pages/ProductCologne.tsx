@@ -8,7 +8,7 @@ const ProductCologne = () => (
     price="$11.99"
     oldPrice="$19.99 CAD"
     discount="40%"
-    priceId="price_1TGvH6Pkl9P0JJ5q4mg7eLmk"
+    paymentLink="https://buy.stripe.com/00w5kC87ed5W1fC5Ry8Ra07"
     image={productCologne}
     description="Authentic cologne and fragrance suppliers offering premium brands at unbeatable prices. Source high-demand fragrances for your reselling business."
     features={[

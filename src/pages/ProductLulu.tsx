@@ -8,7 +8,7 @@ const ProductLulu = () => (
     price="$11.99"
     oldPrice="$19.99 CAD"
     discount="40%"
-    priceId="price_1TICsCPkl9P0JJ5qikR7BRdq"
+    paymentLink="https://buy.stripe.com/eVqcN4evC2ri0by7ZG8Ra04"
     image={productLulu}
     description="Premium athletic wear and activewear suppliers with Lululemon-style quality at wholesale prices. Source high-demand athleisure for your business."
     features={[
