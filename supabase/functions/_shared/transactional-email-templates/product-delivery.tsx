@@ -5,7 +5,7 @@ import {
 } from 'npm:@react-email/components@0.0.22'
 import type { TemplateEntry } from './registry.ts'
 
-const SITE_NAME = "Purple Profits Hub"
+const SITE_NAME = "2Sauce LLC"
 const LOGO_URL = "https://gdkplfyntfhqhwowkchx.supabase.co/storage/v1/object/public/email-assets/logo_new.png"
 
 interface ProductDeliveryProps {

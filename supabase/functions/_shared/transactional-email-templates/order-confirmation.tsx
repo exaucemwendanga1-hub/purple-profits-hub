@@ -1,27 +1,33 @@
 /// <reference types="npm:@types/react@18.3.1" />
 import * as React from 'npm:react@18.3.1'
 import {
-  Body, Container, Head, Heading, Html, Preview, Section, Text, Hr,
+  Body, Container, Head, Heading, Html, Img, Preview, Section, Text, Hr,
 } from 'npm:@react-email/components@0.0.22'
 import type { TemplateEntry } from './registry.ts'
 
-const SITE_NAME = "Purple Profits Hub"
+const SITE_NAME = "2Sauce LLC"
+const LOGO_URL = "https://gdkplfyntfhqhwowkchx.supabase.co/storage/v1/object/public/email-assets/logo_new.png"
 
 interface OrderConfirmationProps {
+  customerName?: string
   productName?: string
   amount?: string
   customerEmail?: string
 }
 
-const OrderConfirmationEmail = ({ productName, amount, customerEmail }: OrderConfirmationProps) => (
+const OrderConfirmationEmail = ({ customerName, productName, amount, customerEmail }: OrderConfirmationProps) => (
   <Html lang="en" dir="ltr">
     <Head />
     <Preview>Order confirmed — {productName || 'your purchase'} from {SITE_NAME}</Preview>
     <Body style={main}>
       <Container style={container}>
+        <Section style={logoSection}>
+          <Img src={LOGO_URL} alt={SITE_NAME} width="160" height="auto" style={logo} />
+        </Section>
+        <Hr style={hrLight} />
         <Heading style={h1}>✅ Order Confirmed!</Heading>
         <Text style={text}>
-          Hey there! Your order has been received and is being processed.
+          {customerName ? `Hey ${customerName}! Your` : 'Hey there! Your'} order has been received and is being processed.
         </Text>
         <Section style={detailsBox}>
           <Text style={detailLabel}>Product</Text>
@@ -58,6 +64,7 @@ export const template = {
     `Order confirmed: ${data.productName || 'Your Purchase'}`,
   displayName: 'Order confirmation',
   previewData: {
+    customerName: 'Jane',
     productName: 'All Supplier Bundle',
     amount: '$29.99',
     customerEmail: 'jane@example.com',
@@ -66,6 +73,9 @@ export const template = {
 
 const main = { backgroundColor: '#ffffff', fontFamily: "'Outfit', Arial, sans-serif" }
 const container = { padding: '40px 25px', maxWidth: '560px', margin: '0 auto' }
+const logoSection = { textAlign: 'center' as const, margin: '0 0 16px' }
+const logo = { margin: '0 auto' }
+const hrLight = { borderColor: '#f0eef5', margin: '0 0 24px' }
 const h1 = { fontSize: '24px', fontWeight: 'bold' as const, color: '#1a1a2e', margin: '0 0 24px', textAlign: 'center' as const }
 const text = { fontSize: '15px', color: '#55575d', lineHeight: '1.6', margin: '0 0 16px' }
 const detailsBox = { backgroundColor: '#f8f7ff', borderRadius: '12px', padding: '20px 24px', margin: '16px 0 24px' }
