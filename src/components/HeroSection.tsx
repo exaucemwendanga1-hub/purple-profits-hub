@@ -18,7 +18,7 @@ const HeroSection = () => {
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link to="/bundle" className="bg-primary hover:bg-primary-light text-primary-foreground px-10 py-4 rounded-full font-semibold text-lg transition-all glow-neon hover:scale-105">
-            🔥 Get the All Supplier Bundle — $29.99
+            🔥 Get the All Supplier Bundle — $24.99
           </Link>
           <button onClick={scrollTo} className="border border-primary/50 text-primary-light hover:bg-primary/10 px-10 py-4 rounded-full font-semibold text-lg transition-all">
             Browse Lists →
