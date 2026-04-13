@@ -4,7 +4,7 @@ import ProductPageLayout from "@/components/ProductPageLayout";
 
 const ProductLulu = () => (
   <ProductPageLayout
-    name="Lulu Supplier List"
+    name="athletic wear Supplier List"
     price="$11.99"
     oldPrice="$19.99 CAD"
     discount="40%"
