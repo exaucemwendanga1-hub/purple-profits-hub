@@ -155,6 +155,7 @@ serve(async (req) => {
         recipientEmail: customerEmail,
         idempotencyKey: `product-delivery-${session.id}-${priceId}`,
         templateData: {
+          customerName: session.customer_details?.name || "",
           productName: product.name,
           downloadUrl: signedUrlData.signedUrl,
         },

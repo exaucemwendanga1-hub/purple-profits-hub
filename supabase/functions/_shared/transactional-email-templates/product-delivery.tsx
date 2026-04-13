@@ -1,26 +1,33 @@
 /// <reference types="npm:@types/react@18.3.1" />
 import * as React from 'npm:react@18.3.1'
 import {
-  Body, Button, Container, Head, Heading, Html, Preview, Section, Text, Hr,
+  Body, Button, Container, Head, Heading, Html, Img, Preview, Section, Text, Hr,
 } from 'npm:@react-email/components@0.0.22'
 import type { TemplateEntry } from './registry.ts'
 
 const SITE_NAME = "Purple Profits Hub"
+const LOGO_URL = "https://gdkplfyntfhqhwowkchx.supabase.co/storage/v1/object/public/email-assets/logo_new.png"
 
 interface ProductDeliveryProps {
+  customerName?: string
   productName?: string
   downloadUrl?: string
 }
 
-const ProductDeliveryEmail = ({ productName, downloadUrl }: ProductDeliveryProps) => (
+const ProductDeliveryEmail = ({ customerName, productName, downloadUrl }: ProductDeliveryProps) => (
   <Html lang="en" dir="ltr">
     <Head />
     <Preview>Your download is ready — {productName || 'your supplier list'}</Preview>
     <Body style={main}>
       <Container style={container}>
+        <Section style={logoSection}>
+          <Img src={LOGO_URL} alt={SITE_NAME} width="160" height="auto" style={logo} />
+        </Section>
+        <Hr style={hrLight} />
         <Heading style={h1}>🎉 Your Purchase is Ready!</Heading>
         <Text style={text}>
-          Thanks for purchasing <strong>{productName || 'a supplier list'}</strong> from {SITE_NAME}.
+          {customerName ? `Hey ${customerName}! Thanks` : 'Thanks'} for purchasing{' '}
+          <strong>{productName || 'a supplier list'}</strong> from {SITE_NAME}.
         </Text>
         <Text style={text}>
           Click the button below to download your file. This link expires in 24 hours for security.
@@ -51,6 +58,7 @@ export const template = {
     `Your download is ready: ${data.productName || 'Supplier List'}`,
   displayName: 'Product delivery',
   previewData: {
+    customerName: 'Jane',
     productName: 'All Supplier Bundle',
     downloadUrl: 'https://example.com/download/abc123',
   },
@@ -58,6 +66,9 @@ export const template = {
 
 const main = { backgroundColor: '#ffffff', fontFamily: "'Outfit', Arial, sans-serif" }
 const container = { padding: '40px 25px', maxWidth: '560px', margin: '0 auto' }
+const logoSection = { textAlign: 'center' as const, margin: '0 0 16px' }
+const logo = { margin: '0 auto' }
+const hrLight = { borderColor: '#f0eef5', margin: '0 0 24px' }
 const h1 = { fontSize: '24px', fontWeight: 'bold' as const, color: '#1a1a2e', margin: '0 0 24px', textAlign: 'center' as const }
 const text = { fontSize: '15px', color: '#55575d', lineHeight: '1.6', margin: '0 0 16px' }
 const buttonSection = { textAlign: 'center' as const, margin: '24px 0' }
