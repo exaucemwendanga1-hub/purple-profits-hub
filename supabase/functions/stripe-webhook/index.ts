@@ -143,6 +143,7 @@ serve(async (req) => {
         recipientEmail: customerEmail,
         idempotencyKey: `order-confirm-${session.id}-${priceId}`,
         templateData: {
+          customerName: session.customer_details?.name || "",
           productName: product.name,
           amount: `$${((item.amount_total || 0) / 100).toFixed(2)}`,
           customerEmail,
