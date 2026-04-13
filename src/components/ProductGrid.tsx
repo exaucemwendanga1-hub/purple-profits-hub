@@ -14,10 +14,10 @@ const products = [
   { name: "Ultimate reselling Bundle", price: "​$24.99", old: "$74.99 CAD", image: productUltimateBundle, slug: "/bundle", bestDeal: true },
   { name: "Shoe Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productShoes, slug: "/product/shoes" },
   { name: "Luxury Watch Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productWatch, slug: "/product/watch" },
-  { name: "Earbud Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productEarbuds, slug: "/product/earbuds" },
+  { name: "electronics supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productEarbuds, slug: "/product/earbuds" },
   { name: "Cologne Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productCologne, slug: "/product/cologne" },
-  { name: "Puffer Jacket Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productPuffer, slug: "/product/puffer" },
-  { name: "Lulu Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productLulu, slug: "/product/lulu" },
+  { name: "designer Jacket Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productPuffer, slug: "/product/puffer" },
+  { name: "athletic wear Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productLulu, slug: "/product/lulu" },
   { name: "CHME Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productCrm, slug: "/product/crm" },
 ];
 
