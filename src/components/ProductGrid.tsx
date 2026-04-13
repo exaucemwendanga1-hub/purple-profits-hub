@@ -16,7 +16,7 @@ const products = [
   { name: "Luxury Watch Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productWatch, slug: "/product/watch" },
   { name: "electronics supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productEarbuds, slug: "/product/earbuds" },
   { name: "Cologne Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productCologne, slug: "/product/cologne" },
-  { name: "designer Jacket Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productPuffer, slug: "/product/puffer" },
+  { name: "designer Jacket Supplier List", price: "$11.99 CAD", old: "$19.99 CAD", image: productPuffer, slug: "/product/puffer" },
   { name: "athletic wear Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productLulu, slug: "/product/lulu" },
   { name: "CrME + streetwear Supplier", price: "$11.99 CAD", old: "$19.99 CAD", image: productCrm, slug: "/product/crm" },
 ];
