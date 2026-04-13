@@ -84,10 +84,9 @@ const ProductPageLayout = ({
             {/* CTA */}
             <button
               onClick={handleBuy}
-              disabled={loading}
-              className="w-full bg-primary text-primary-foreground py-4 rounded-xl text-lg font-heading tracking-wide uppercase glow-neon hover:bg-primary-light transition-all hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50"
+              className="w-full bg-primary text-primary-foreground py-4 rounded-xl text-lg font-heading tracking-wide uppercase glow-neon hover:bg-primary-light transition-all hover:scale-[1.02] active:scale-[0.98]"
             >
-              {loading ? "Loading..." : `Get Instant Access — ${price} CAD`}
+              {`Get Instant Access — ${price} CAD`}
             </button>
 
             <div className="flex items-center justify-center gap-4 mt-4 text-muted-foreground text-xs">
@@ -160,10 +159,9 @@ const ProductPageLayout = ({
           <p className="text-muted-foreground mb-8">One-time payment. Instant access. Lifetime updates.</p>
           <button
             onClick={handleBuy}
-            disabled={loading}
-            className="bg-primary text-primary-foreground px-10 py-4 rounded-xl text-lg font-heading tracking-wide uppercase glow-neon hover:bg-primary-light transition-all hover:scale-105 disabled:opacity-50"
+            className="bg-primary text-primary-foreground px-10 py-4 rounded-xl text-lg font-heading tracking-wide uppercase glow-neon hover:bg-primary-light transition-all hover:scale-105"
           >
-            {loading ? "Loading..." : `Get the List — ${price} CAD`}
+            {`Get the List — ${price} CAD`}
           </button>
         </div>
       </section>
