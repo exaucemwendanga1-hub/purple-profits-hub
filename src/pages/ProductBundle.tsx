@@ -10,9 +10,9 @@ const ProductBundle = () => (
     discount="65%"
     paymentLink="https://buy.stripe.com/7sYaEWafm6Hygaweo48Ra05"
     image={productBundle}
-    description="Get access to every supplier list we offer — shoes, watches, electronics, cologne, puffer jackets & more. Updated weekly with new verified sources."
+    description="Get access to every supplier list we offer — shoes, watches, electronics, cologne, designer jackets & more. Updated weekly with new verified sources."
     features={[
-      { icon: Package, title: "8 Supplier Lists in One", desc: "Shoes, watches, electronics, cologne, puffer jackets, lulu, CRM & more." },
+      { icon: Package, title: "8 Supplier Lists in One", desc: "Shoes, watches, electronics, cologne, designer jackets, lulu, CRM & more." },
       { icon: Zap, title: "Instant Digital Delivery", desc: "Get access immediately after purchase — no waiting." },
       { icon: RefreshCw, title: "Weekly Updates", desc: "New suppliers added regularly so you always have fresh sources." },
       { icon: Shield, title: "Verified & Trusted", desc: "Every supplier is vetted for quality, reliability, and pricing." },
@@ -22,7 +22,7 @@ const ProductBundle = () => (
       "Luxury Watch Supplier List",
       "electronics Supplier List",
       "Cologne Supplier List",
-      "Puffer Jacket Supplier List",
+      "designer Jacket Supplier List",
       "Lulu Supplier List",
       "CRM Supplier List",
       "Future Lists (Free Updates)",

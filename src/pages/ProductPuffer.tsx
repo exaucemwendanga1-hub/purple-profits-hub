@@ -18,7 +18,7 @@ const ProductPuffer = () => (
       { icon: Shield, title: "Verified & Trusted", desc: "Every supplier is vetted for quality, reliability, and pricing." },
     ]}
     includes={[
-      "Puffer Jacket Suppliers",
+      "designer Jacket Suppliers",
       "Trending Outerwear Sources",
       "Wholesale Pricing Contacts",
       "Style & Trend Guide",
@@ -30,7 +30,7 @@ const ProductPuffer = () => (
       { q: "Are the suppliers verified?", a: "Yes — every supplier is manually vetted for quality, reliability, and competitive pricing." },
       { q: "How often are the lists updated?", a: "We update the lists weekly with new suppliers, and you get all future updates for free." },
       { q: "Can I get a refund?", a: "Due to the digital nature of this product, we offer refunds within 24 hours if you haven't downloaded the files." },
-      { q: "Is this a one-time payment?", a: "Yes! Pay once and get lifetime access to the puffer jacket supplier list with all future updates." },
+      { q: "Is this a one-time payment?", a: "Yes! Pay once and get lifetime access to the designer jacket supplier list with all future updates." },
     ]}
   />
 );
