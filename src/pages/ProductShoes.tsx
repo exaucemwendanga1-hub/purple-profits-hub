@@ -6,7 +6,7 @@ const ProductShoes = () => (
   <ProductPageLayout
     name="Shoe Supplier List"
     price="$11.99"
-    oldPrice="$19.99 CAD"
+    oldPrice="$19.99 USD"
     discount="40%"
     paymentLink="https://buy.stripe.com/7sY00i87ec1SbUg4Nu8Ra00"
     image={productShoes}
