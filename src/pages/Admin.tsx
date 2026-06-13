@@ -9,6 +9,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 
 import { DollarSign, ShoppingCart, TrendingUp, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { AdminFileManager } from "@/components/AdminFileManager";
+import { AdminResendDelivery } from "@/components/AdminResendDelivery";
 
 interface OrderStats {
   totalRevenue: number;
@@ -216,6 +217,11 @@ const Admin = () => {
         ) : (
           <p className="text-muted-foreground">No data available.</p>
         )}
+
+        {/* Resend Delivery Email */}
+        <div className="mt-8">
+          <AdminResendDelivery />
+        </div>
 
         {/* Digital Product File Manager */}
         <div className="mt-8">
