@@ -24,28 +24,24 @@ Deno.serve(async (req) => {
   const anonKey = Deno.env.get("SUPABASE_ANON_KEY")!;
 
   try {
+    // Admin-only: require admin user JWT
     const authHeader = req.headers.get("Authorization") || "";
     const token = authHeader.replace("Bearer ", "");
-
-    // Allow service role direct, otherwise require admin user
+    const userClient = createClient(supabaseUrl, anonKey, {
+      global: { headers: { Authorization: authHeader } },
+    });
+    const { data: userData } = await userClient.auth.getUser(token);
     let isAuthorized = token === serviceKey;
-    if (!isAuthorized) {
-      const userClient = createClient(supabaseUrl, anonKey, {
-        global: { headers: { Authorization: authHeader } },
-      });
-      const { data: userData } = await userClient.auth.getUser(token);
-      if (userData?.user) {
-        const admin = createClient(supabaseUrl, serviceKey);
-        const { data: roleRow } = await admin
-          .from("user_roles")
-          .select("role")
-          .eq("user_id", userData.user.id)
-          .eq("role", "admin")
-          .maybeSingle();
-        isAuthorized = !!roleRow;
-      }
+    if (!isAuthorized && userData?.user) {
+      const adminCheck = createClient(supabaseUrl, serviceKey);
+      const { data: roleRow } = await adminCheck
+        .from("user_roles")
+        .select("role")
+        .eq("user_id", userData.user.id)
+        .eq("role", "admin")
+        .maybeSingle();
+      isAuthorized = !!roleRow;
     }
-
     if (!isAuthorized) {
       return new Response(JSON.stringify({ error: "Unauthorized" }), {
         status: 401,
