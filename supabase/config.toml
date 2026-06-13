@@ -15,3 +15,5 @@ project_id = "gdkplfyntfhqhwowkchx"
     verify_jwt = false
   [functions.stripe-webhook]
     verify_jwt = false
+  [functions.resend-delivery]
+    verify_jwt = false
